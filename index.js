@@ -26,14 +26,14 @@ function closework(){
         $("#work_container").css("display","none");
     },800);
 }
-function showcontact(){
+function showback(){
     $("#contact_container").css("display","inherit");
     $("#contact_container").addClass("animated slideInUp");
     setTimeout(function(){
         $("#contact_container").removeClass("animated slideInUp");
     },800);
 }
-function closecontact(){
+function closeback(){
     $("#contact_container").addClass("animated slideOutDown");
     setTimeout(function(){
         $("#contact_container").removeClass("animated slideOutDown");
