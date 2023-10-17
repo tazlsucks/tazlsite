@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
+
+body {
+    padding:0px;
+    margin:0px;
+    background:rgb(0, 0, 0);
+    background-size:cover;
+    width: 80px;
+    height: 100px;
+
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+#middle404 {
+    width:100vw;
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    position:fixed;
+    top:0;
+    text-align:center;
+    z-index:1;
+    color:#2c2c2c;
+    padding-bottom:10vh;
+}
+#middle404 h1 {
+    color:rgb(255, 255, 255);
+    font-size:70px;
+}
+.btn_one {
+    font-size:18px;
+    font-family: 'Josefin Sans', sans-serif;
+    color:#fff;
+    background:transparent;
+    border:3px solid #fff;
+    padding:8px 40px;
+    border-radius:80px;
+    font-weight:bold;
+    margin:2vh 10px;
+    transition:0.4s ease-in-out;
+}
+.btn_one:hover {
+    cursor:pointer;
+    color:rgb(64, 50, 255);
+    background:#fff;
+}
+.btn_two {
+    font-size:18px;
+    font-family: 'Josefin Sans', sans-serif;
+    color:rgb(64, 50, 255);
+    background:#fff;
+    border:3px solid #fff;
+    padding:8px 40px;
+    border-radius:80px;
+    font-weight:bold;
+    margin:2vh 10px;
+    transition:0.4s ease-in-out;
+}
+.btn_two:hover {
+    cursor:pointer;
+    padding:8px 60px;
+}
+#box {
+    width:100vw;
+    height:100vh;
+    z-index:9;
+    position:fixed;
+    top:0;
+}
+#box div {
+    width:16.66vw;
+    height:100%;
+    display:inline-block;
+}
+.box1 {
+    background:rgb(0, 0, 0);
+}
+.box2 {
+    background:rgb(0, 0, 0);
+    margin-left:-5px;
+}
