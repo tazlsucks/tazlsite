@@ -1,2 +1,2 @@
 # tazlsite
-<p1>https://tazldied.cc</p1>
+<p1>rewriting the website, coming soon:tm:</p1>
