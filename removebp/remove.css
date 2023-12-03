@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
+
+body {
+    padding:0px;
+    margin:0px;
+    background:rgb(0, 0, 0);
+    background-size:cover;
+    width: 80px;
+    height: 100px;
+
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+#middle {
+    width:100vw;
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    position:fixed;
+    top:0;
+    text-align:center;
+    z-index:1;
+    color:#2c2c2c;
+    padding-bottom:10vh;
+}
+#middle h1 {
+    color:rgb(255, 255, 255);
+    font-size:70px;
+}
+#middle h2 {
+    color:rgb(189, 189, 189);
+
+}
+
