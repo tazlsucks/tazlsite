@@ -1,29 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
 
 body {
-    padding:0px;
-    margin:0px;
+  background-repeat: no-repeat;
+  background-size: 100%;
     background:rgb(0, 0, 0);
-    background-size:cover;
-    width: 80px;
-    height: 100px;
 
     font-family: 'Josefin Sans', sans-serif;
 }
 
 
 #middle {
-    width:100vw;
-    height:90vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    position:fixed;
-    top:0;
-    text-align:center;
-    z-index:1;
-    color:#2c2c2c;
-    padding-bottom:10vh;
+  justify-content:center;
+  text-align: center;
 }
 #middle h1 {
     color:rgb(255, 255, 255);
@@ -107,3 +95,11 @@ body {
     transition: box-shadow 0.2s ease-in;
   }
   
+  footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
