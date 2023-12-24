@@ -15,3 +15,20 @@ p{
     font-family:sans-serif;
     
 }
+a:link {
+    color:blue;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: lightskyblue;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color:aqua;
+    background-color: transparent;
+    text-decoration: underline;
+  }
