@@ -1,0 +1,17 @@
+
+body {
+    background:rgb(18,18,18);
+    text-align: center;
+}
+
+h1{
+    color:white;
+    font-size:70px;
+    font-family:sans-serif;
+}
+p{
+    color: white;
+    font-size: 20px;
+    font-family:sans-serif;
+    
+}
