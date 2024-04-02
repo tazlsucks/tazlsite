@@ -12,13 +12,78 @@
     <meta property="twitter:url" content="https://tazldied.cc" />
     <meta property="twitter:title" content="tazldied" />
     <meta property="twitter:description" content=":3" />
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>tazl</title>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="images/LsD4KfW.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-:3
+    <div class="animate__animated animate__slideInDown container page1">
+        <h1>tazldied</h1>
+        <h2>i do things sometimes</h2>
+        <div class="button-container">
+            <a class="social", href="https://x.com/tazldied"><i class="fab fa-twitter"></i></a>
+            <a class="social", href="https://www.instagram.com/tazl.died/"><i class="fab fa-instagram"></i></a>
+            <a class="social", href="https://youtube.com/@tazldied"><i class="fab fa-youtube"></i></a>
+        </div>
+        <h1></h1>
+        <div class="button-container">
+            <button class="button"onclick="toggleAbout()">about me</button>
+            <button class="button"onclick="toggleWork()">my works</button>
+          </div>
+    </div>
+    <div class="container works">
+        <h1>works</h1>
+        <iframe frameborder="0" src="https://itch.io/embed/1193615?linkback=true&amp;dark=true" width="552" height="167"><a href="https://tazl.itch.io/cubix">Cubix by tazl</a></iframe>
+        <h2><a class="button" target="_blank" href="removebp/index.html">RemoveBP</a></h2>
+        <h1></h1>
+        <h2>more coming soon (maybe)</h2>
+        <button class="button"onclick="toggleWork()">back</button>
+    </div>
+    <div class="container about">
+        <h1>about me</h1>
+        <h2>16 year old video game player</h2>
+        <p>
+            i really like computers and software! i've been programming off and on<br>for about three years now.
+            <br>
+        </p>
+        <h2><iframe src="https://status.tazldied.cc/badge?theme=dark" width="200" height="30" frameborder="0" scrolling="no"></iframe></h2>
+        <button class="button", onclick="window.location = `mailto:tazl@tazldied.cc`;">email me</button>
+        <h2></h2>
+        <button class="button"onclick="toggleAbout()">back</button>
+    </div>
+    <script>
+        function toggleWork() {
+            // Toggle the display of both pages
+            var page1 = document.querySelector('.page1');
+            var works = document.querySelector('.works');
+    
+            if (page1.style.display === 'none') {
+                page1.style.display = 'block';
+                works.style.display = 'none';
+            } else {
+                page1.style.display = 'none';
+                works.style.display = 'block';
+            }
+        }
+        function toggleAbout() {
+                // Toggle the display of both pages
+                var page1 = document.querySelector('.page1');
+                var about = document.querySelector('.about');
+        
+                if (page1.style.display === 'none') {
+                    page1.style.display = 'block';
+                    about.style.display = 'none';
+                } else {
+                    page1.style.display = 'none';
+                    about.style.display = 'block';
+                }
+            }
+    </script>
+     <footer>aHR0cHM6Ly93d3cucm9ibG94LmNvbS9nYW1lcy8xNjA5MzI3Mzg4My90YXpscy1vYmJ5</footer>
 </body>
 </html>

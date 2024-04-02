@@ -1,0 +1,116 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body, html{
+    background-color: rgb(16,16,18);
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+  }
+
+h1{
+    font-family: "DM Sans", monospace, sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 50px;
+}
+
+h2{
+    font-family: "DM Sans", monospace, sans-serif;
+    color: gray;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+p{
+  font-family: "DM Sans", monospace, sans-serif;
+    color: gray;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+footer {
+    background-color: rgb(16,16,18);
+    color: rgb(16,16,18);
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align:center;
+    
+  }
+
+  .animate__animated.animate__slideInDown {
+    --animate-duration: 0.57s;
+  }
+
+
+  a{
+    text-decoration: none;
+  }
+
+  a:link {
+    color: white;
+  }
+  /* visited link */
+  a:visited {
+    color: white;
+  }
+  /* mouse over link */
+  a:hover {
+    color: gray;
+  }
+  /* selected link */
+  a:active {
+    color: gray;
+  }
+
+  .button-container {
+    text-align: center;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    background-color: rgb(57, 55, 55);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "DM Sans", monospace, sans-serif;
+  }
+  
+  .button:hover {
+    background-color: rgb(40, 40, 40)
+  }
+  
+  .works {
+    display: none;
+}
+
+  .about{
+    display: none;
+  }
+
+  
+  .social {
+    color:#fff;
+    font-size: 25px;
+    border-radius:50%;
+    transition:0.4s ease-in-out;
+    margin:0px 8px;
+    text-align:center;
+}
+.social:hover { 
+    cursor: pointer;
+    color:rgb(255, 50, 50);
+}
+
