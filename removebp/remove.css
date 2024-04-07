@@ -1,105 +1,122 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
 
-body {
-  background-repeat: no-repeat;
-  background-size: 100%;
-    background:rgb(0, 0, 0);
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-    font-family: 'Josefin Sans', sans-serif;
+
+body, html{
+    background-color: rgb(16,16,18);
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.container {
+    text-align: center;
+  }
 
-#middle {
-  justify-content:center;
-  text-align: center;
-}
-#middle h1 {
-    color:rgb(255, 255, 255);
-    font-size:70px;
-}
-#middle h2 {
-    color:rgb(189, 189, 189);
-
+h1{
+    font-family: "DM Sans", monospace, sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 50px;
 }
 
-.button {
-    position: relative;
-    padding: 10px 20px;
-    border-radius: 7px;
-    border: 1px solid rgb(61, 106, 255);
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 2px;
-    background: transparent;
+h2{
+    font-family: "DM Sans", monospace, sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+h3{
+  font-family: "DM Sans", monospace, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+p{
+  font-family: "DM Sans", monospace, sans-serif;
+    color: gray;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+footer {
+    background-color: rgb(16,16,18);
     color: #fff;
-    overflow: hidden;
-    box-shadow: 0 0 0 0 transparent;
-    -webkit-transition: all 0.2s ease-in;
-    -moz-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align:center;
+    
+  }
+
+  .animate__animated.animate__slideInDown {
+    --animate-duration: 0.57s;
+  }
+
+
+  a{
+    text-decoration: none;
+  }
+
+  a:link {
+    color: white;
+  }
+  /* visited link */
+  a:visited {
+    color: white;
+  }
+  /* mouse over link */
+  a:hover {
+    color: gray;
+  }
+  /* selected link */
+  a:active {
+    color: gray;
+  }
+
+  .button-container {
+    text-align: center;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    background-color: rgb(57, 55, 55);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "DM Sans", monospace, sans-serif;
   }
   
   .button:hover {
-    background: rgb(61, 106, 255);
-    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
+    background-color: rgb(40, 40, 40)
   }
   
-  .button:hover::before {
-    -webkit-animation: sh02 0.5s 0s linear;
-    -moz-animation: sh02 0.5s 0s linear;
-    animation: sh02 0.5s 0s linear;
-  }
-  
-  .button::before {
-    content: '';
-    display: block;
-    width: 0px;
-    height: 86%;
-    position: absolute;
-    top: 7%;
-    left: 0%;
-    opacity: 0;
-    background: #fff;
-    box-shadow: 0 0 50px 30px #fff;
-    -webkit-transform: skewX(-20deg);
-    -moz-transform: skewX(-20deg);
-    -ms-transform: skewX(-20deg);
-    -o-transform: skewX(-20deg);
-    transform: skewX(-20deg);
-  }
-  
-  @keyframes sh02 {
-    from {
-      opacity: 0;
-      left: 0%;
-    }
-  
-    50% {
-      opacity: 1;
-    }
-  
-    to {
-      opacity: 0;
-      left: 100%;
-    }
-  }
-  
-  .button:active {
-    box-shadow: 0 0 0 0 transparent;
-    -webkit-transition: box-shadow 0.2s ease-in;
-    -moz-transition: box-shadow 0.2s ease-in;
-    transition: box-shadow 0.2s ease-in;
-  }
-  
-  footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
+  .works {
+    display: none;
 }
+
+  .about{
+    display: none;
+  }
+
+  
+  .social {
+    color:#fff;
+    font-size: 25px;
+    border-radius:50%;
+    transition:0.4s ease-in-out;
+    margin:0px 8px;
+    text-align:center;
+}
+.social:hover { 
+    cursor: pointer;
+    color:rgb(255, 50, 50);
+}
+
