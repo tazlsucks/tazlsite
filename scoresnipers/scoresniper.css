@@ -21,6 +21,11 @@ p{
     font-size: 40px;
     font-family: "Montserrat";
 }
+h3{
+    color: white;
+    font-size: 20px;
+    font-family: "Montserrat";
+}
 
 footer {
     background-color: rgb(16,16,18);
