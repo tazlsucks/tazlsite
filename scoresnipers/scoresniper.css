@@ -27,6 +27,25 @@ h3{
     font-family: "Montserrat";
 }
 
+a{
+    text-decoration: none;
+  }
+  a:link {
+    color: white;
+  }
+  /* visited link */
+  a:visited {
+    color: white;
+  }
+  /* mouse over link */
+  a:hover {
+    color: gray;
+  }
+  /* selected link */
+  a:active {
+    color: gray;
+  }
+
 footer {
     background-color: rgb(16,16,18);
     color: white;
