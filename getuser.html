@@ -41,7 +41,7 @@
             }
 
             try {
-                // Fetch user info from Cloudflare Worker
+                // Fetch user info
                 const response = await fetch(url);
                 if (!response.ok) {
                     throw new Error('User not found');
