@@ -113,4 +113,20 @@ footer {
     cursor: pointer;
     color:rgb(255, 50, 50);
 }
+input {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.user-info {
+  display: none;
+  margin-top: 20px;
+}
+.user-info img {
+  border-radius: 50%;
+}
+.error {
+  color: red;
+  margin-top: 20px;
+  font-family: "DM Sans", monospace, sans-serif;
+}
 
