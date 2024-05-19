@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "routes": [
+      {
+        "pattern": "/dash/*",
+        "worker": "scoresnipeauth"
+      },
+      {
+        "pattern": "/auth/callback",
+        "worker": "scoresnipeauth"
+      }
+    ]
+  }
+  
