@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
 body{
     background-color: rgb(16,16,18);
     text-align: center;
@@ -55,4 +56,24 @@ footer {
     width: 100%;
     text-align:center;
     font-family: "Montserrat";
+  }
+
+  .button-container {
+    text-align: center;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    background-color: rgb(57, 55, 55);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Montserrat", monospace, sans-serif;
+  }
+  
+  .button:hover {
+    background-color: rgb(40, 40, 40)
   }

@@ -3,9 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>not logged in</title>
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <title>login</title>
+    <link rel="stylesheet" href="scoresniper.css">
+    <script src="https://cdn.auth0.com/js/auth0/9.17/auth0.min.js"></script>
+    <script>
+        // Replace with your Auth0 domain and client ID
+        const auth0Domain = 'dev-cgplpr7zt7i7xj7h.us.auth0.com';
+        const auth0ClientID = '6keazZlI4G0jRM6ySKJpbS5haMHOSpuj';
+
+
+        window.onload = async function() {
+            auth0 = new auth0.WebAuth({
+                domain: auth0Domain,
+                clientID: auth0ClientID,
+                redirectUri: 'https://tazl.cc/scoresnipers/dash',
+                responseType: 'token id_token',
+                scope: 'openid profile email'
+            });
+
+            if (window.location.hash) {
+                handleAuthentication();
+            } else if (isAuthenticated()) {
+                document.getElementById('login-status').innerHTML = 'You are logged in!';
+            } else {
+                document.getElementById('login-status').innerHTML = 'You are logged out!';
+            }
+        }
+
+        function login() {
+            auth0.authorize();
+        }
+
+        function handleAuthentication() {
+            auth0.parseHash((err, authResult) => {
+                if (authResult && authResult.accessToken && authResult.idToken) {
+                    window.location.hash = '';
+                    setSession(authResult);
+                    document.getElementById('login-status').innerHTML = 'You are logged in!';
+                } else if (err) {
+                    console.error(`Error: ${err.error}`);
+                }
+            });
+        }
+
+        function setSession(authResult) {
+            // Set the time that the access token will expire at
+            const expiresAt = JSON.stringify(
+                authResult.expiresIn * 1000 + new Date().getTime()
+            );
+            localStorage.setItem('access_token', authResult.accessToken);
+            localStorage.setItem('id_token', authResult.idToken);
+            localStorage.setItem('expires_at', expiresAt);
+        }
+
+        function logout() {
+            // Remove tokens and expiry time from localStorage
+            auth0.logout({ returnTo: window.location.origin });
+            localStorage.removeItem('access_token');
+            localStorage.removeItem('id_token');
+            localStorage.removeItem('expires_at');
+            document.getElementById('login-status').innerHTML = 'You are logged out!';
+        }
+
+        function isAuthenticated() {
+            // Check whether the current time is past the access token's expiry time
+            const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
+            return new Date().getTime() < expiresAt;
+        }
+    </script>
 </head>
 <body>
+    <h1>please log in</h1>
+    <p id="login-status">You are logged out!</p>
+    <a class="button" onclick="login()">Login</button>
+    <a class="button" onclick="logout()">Logout</button>
 </body>
 </html>
