@@ -92,6 +92,7 @@
         function waitForHttps() {
         if (window.location.protocol === 'https:') {
         console.log("all good!")
+        setTimeout(1000);
         login();
          } else {
         // Protocol is not HTTPS, wait and check again
