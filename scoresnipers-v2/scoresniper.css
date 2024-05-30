@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body{
+    background-color: rgb(16,16,18);
+    text-align: center;
+}
+
+
+h1{
+    color: white;
+    font-size: 60px;
+    font-family: "Montserrat";
+}
+h2{
+    color: white;
+    font-size: 55px;
+    font-family: "Montserrat";
+}
+p{
+    color: white;
+    font-size: 40px;
+    font-family: "Montserrat";
+}
+h3{
+    color: white;
+    font-size: 20px;
+    font-family: "Montserrat";
+}
+
+a{
+    text-decoration: none;
+  }
+  a:link {
+    color: white;
+  }
+  /* visited link */
+  a:visited {
+    color: white;
+  }
+  /* mouse over link */
+  a:hover {
+    color: gray;
+  }
+  /* selected link */
+  a:active {
+    color: gray;
+  }
+
+footer {
+    background-color: rgb(16,16,18);
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align:center;
+    font-family: "Montserrat";
+  }
+
+  .login {
+    display: none;
+}
+
+.logincheck {
+  display: none;
+}
+
+  .button-container {
+    text-align: center;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    background-color: rgb(57, 55, 55);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Montserrat", monospace, sans-serif;
+  }
+  
+  .button:hover {
+    background-color: rgb(40, 40, 40)
+  }
+
+.test{
+  display: none;
+}
+

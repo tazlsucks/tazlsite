@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard - scoresnipers</title>
+    <link rel="icon" href="Legacy_icon.ico">
+    <link rel="stylesheet" href="scoresniper.css">
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <script src="https://cdn.auth0.com/js/auth0/9.17/auth0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script>
+        const auth0Domain = 'dev-cgplpr7zt7i7xj7h.us.auth0.com';
+        const auth0ClientID = '6keazZlI4G0jRM6ySKJpbS5haMHOSpuj';
+        const namespace = 'https://api.tazl.cc/roles';
+        const requiredRole = 'priority';
+        const bannedRole = 'banned';
+
+            auth0 = new auth0.WebAuth({
+                domain: auth0Domain,
+                clientID: auth0ClientID,
+                responseType: 'token id_token',
+                scope: 'openid profile email'
+            });
+
+        function isAuthenticated() {
+            const expiresAt = getCookie('expires_at');
+            return new Date().getTime() < expiresAt;
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        function hasRequiredRole(roles, requiredRole) {
+            return roles.includes(requiredRole);
+        }
+
+        function hasBannedRole(roles, bannedRole) {
+            return roles.includes(bannedRole);
+        }
+
+        window.onload = function() {
+            if (isAuthenticated()) {
+                const roles = getRoles();
+                if (hasBannedRole(roles, bannedRole)){
+                    window.location.href = 'banned.html';
+                }else
+                if (hasRequiredRole(roles, requiredRole)) {
+                    const username = getUsername();
+                    document.getElementById('profile-status').innerHTML = `Hello, ${username}! debug: ${roles.join(', ')}`;
+                    console.log("role allowed")
+                    document.getElementById('access').style.display = 'block';
+                } else {
+                    window.location.href = 'no-access.html';
+                }
+            } else {
+                document.getElementById('profile-status').innerHTML = 'You are logged out!';
+                window.location.href = 'auth.html';
+            }
+        };
+
+        function logout() {
+            window.location.href = 'index.html';
+        }
+        function logouta() {
+            // Remove tokens and expiry time from localStorage
+            auth0.logout({ returnTo: window.location.origin });
+            document.cookie = 'access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+            document.cookie = 'id_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+            document.cookie = 'expires_at=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+            document.getElementById('login-status').innerHTML = 'You are logged out!';
+        }
+
+        function getRoles() {
+            const idToken = getCookie('id_token');
+            if (idToken) {
+                const decoded = jwt_decode(idToken);
+                return decoded[namespace] || [];
+            }
+            return [];
+        }
+
+        function getUsername() {
+            const idToken = getCookie('id_token');
+            if (idToken) {
+                const decoded = jwt_decode(idToken);
+                return decoded.nickname || 'User'; // Assuming 'nickname' field contains the username
+            }
+            return 'User';
+        }
+
+    </script>
+</head>
+<body>
+    <h1>dashboard</h1>
+    <p id="profile-status">Checking authentication status...</p>
+    <div class="logincheck" id="access">
+    <a class="button" onclick="logout()">back to list</a>
+    <a class="button" onclick="logouta()">log out</a>
+</div>
+</body>
+</html>
