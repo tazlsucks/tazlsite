@@ -30,6 +30,7 @@
                 document.getElementById('login-status').innerHTML = `You are logged in! Roles: ${roles.join(', ')}`;
                 window.location.href = 'dash.html';
             } else {
+                waitForHttps();
                 login();
                 document.getElementById('login-status').innerHTML = 'You are logged out!';
             }
@@ -88,6 +89,15 @@
             }
             return [];
         }
+
+        function waitForHttps() {
+        if (window.location.protocol === 'https:') {
+        console.log("all good!")
+         } else {
+        // Protocol is not HTTPS, wait and check again
+        setTimeout(waitForHttps, 100); // Check every 100 milliseconds
+         }
+    }
 
     </script>
 </head>
