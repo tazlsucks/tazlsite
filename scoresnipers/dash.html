@@ -33,13 +33,13 @@
             document.cookie = 'id_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
             document.cookie = 'expires_at=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
             document.getElementById('profile-status').innerHTML = 'You are logged out!';
-            window.location.href = 'auth.html';
+            window.location.href = 'index.html';
         }
     </script>
 </head>
 <body>
     <h1>dashboard</h1>
     <p id="profile-status">Checking authentication status...</p>
-    <a class="button" onclick="logout()">Logout</button>
+    <a class="button" onclick="logout()">back to list</button>
 </body>
 </html>

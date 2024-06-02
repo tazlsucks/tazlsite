@@ -18,7 +18,7 @@
             auth0 = new auth0.WebAuth({
                 domain: auth0Domain,
                 clientID: auth0ClientID,
-                redirectUri: 'https://test.tazlsite.pages.dev/scoresnipers-v2/auth',
+                redirectUri: 'http://127.0.0.1:5500/auth.html',
                 responseType: 'token id_token',
                 scope: 'openid profile email'
             });

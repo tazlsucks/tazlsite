@@ -6,6 +6,7 @@
     <title>NNB Score Snipers</title>
     <link rel="stylesheet" href="scoresniper.css">
     <link rel="icon" href="Legacy_icon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         .textdec{
             text-decoration: underline;
@@ -13,6 +14,13 @@
     </style>
 </head>
 <body>
+    <div id="notification-box" class="animate__animated animate__fadeInDown">
+        <h1>scoresnipers v2 is here! 🎉</h1>
+        <h2>click below to go to the new and improved list!</h2>
+        <a class="button" href="https://test.tazlsite.pages.dev/scoresnipers-v2">go to new site</a>
+        <a class="button" id="close-button">don't show this again</a>
+    </div>
+
     <h1>nico's nextbots score snipers</h1>
     <h2>a list of assholes who want to waste your robux</h2>
     <h3>get a full description of someone <a class="textdec" href="/getuser.html">here</a></h3>
@@ -37,10 +45,27 @@
         <p><a href="https://www.roblox.com/users/4861965899/profile">@Onlyvoicechat9</a></p>
         <p><a href="https://www.roblox.com/users/1848145772/profile">@pedroscr11</a></p>
         <p><a href="https://www.roblox.com/users/4038832507/profile">@PROFIX6_6</a></p>
-        <p><a href="https://www.roblox.com/users/536028622/profile">@rtedydef</a>
         <p><a href="https://www.roblox.com/users/3414003642/profile">@technodude2010</a></p>
 <!--         <p><a href="https://www.roblox.com/users/3782950638/profile">@spongebobguy17746</a></p> -->
     </div>
+
+<script>
+
+if (!localStorage.getItem('notificationClosed')) {
+            document.getElementById('notification-box').style.display = 'block';
+        }
+
+
+document.getElementById('close-button').addEventListener('click', function() {
+            localStorage.setItem('notificationClosed', 'true');
+            document.getElementById('notification-box').classList.add('animate__fadeOutUp');
+            setTimeout(function() {
+                document.getElementById('notification-box').style.display = 'none';
+            }, 1000); // Match the duration of the animation
+        });
+
+
+</script>
 
 <h3>this list only has USERNAMES! not DISPLAY NAMES!</h3>
 </body>   

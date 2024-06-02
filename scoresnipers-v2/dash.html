@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dashboard - scoresnipers</title>
     <link rel="icon" href="Legacy_icon.ico">
-    <link rel="stylesheet" href="scoresniper.css">
+    <link rel="stylesheet" href="dash.css">
     <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
     <script src="https://cdn.auth0.com/js/auth0/9.17/auth0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
@@ -51,7 +51,8 @@
                 }else
                 if (hasRequiredRole(roles, requiredRole)) {
                     const username = getUsername();
-                    document.getElementById('profile-status').innerHTML = `Hello, ${username}! debug: ${roles.join(', ')}`;
+                    document.getElementById('profile-status').innerHTML = `Hello, ${username}!`;
+                    document.getElementById(`debug`).innerHTML = `debug: ${roles.join(', ')}`;
                     console.log("role allowed")
                     document.getElementById('access').style.display = 'block';
                 } else {
@@ -96,11 +97,14 @@
     </script>
 </head>
 <body>
-    <h1>dashboard</h1>
+    <!-- <h1 class="dashtext">dashboard</h1> -->
+    <div class="container">
     <p id="profile-status">Checking authentication status...</p>
     <div class="logincheck" id="access">
+    <a class="button">add user</a>
     <a class="button" onclick="logout()">back to list</a>
     <a class="button" onclick="logouta()">log out</a>
+    <footer id="debug">loading..</footer>
 </div>
 </body>
 </html>

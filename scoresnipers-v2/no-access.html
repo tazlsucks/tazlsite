@@ -8,8 +8,19 @@
     <link rel="icon" href="Legacy_icon.ico">
     <script src="https://cdn.auth0.com/js/auth0/9.17/auth0.min.js"></script>
     <script>
-                function logout() {
-            // Remove tokens and expiry time from localStorage
+        const auth0Domain = 'dev-cgplpr7zt7i7xj7h.us.auth0.com';
+        const auth0ClientID = '6keazZlI4G0jRM6ySKJpbS5haMHOSpuj';
+
+            auth0 = new auth0.WebAuth({
+                domain: auth0Domain,
+                clientID: auth0ClientID,
+                responseType: 'token id_token',
+                scope: 'openid profile email'
+            });
+
+
+        function logout() {
+            auth0.logout({ returnTo: window.location.origin });
             window.location.href = 'index.html';
             document.cookie = 'access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
             document.cookie = 'id_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
