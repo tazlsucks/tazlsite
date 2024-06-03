@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
-    <link rel="stylesheet" href="scoresniper.css">
+    <link rel="stylesheet" href="dash.css">
     <link rel="icon" href="Legacy_icon.ico">
     <script src="https://cdn.auth0.com/js/auth0/9.17/auth0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <style>
+    .textdec{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    </style>
+    <script src="fuckmylife.js"></script>
     <script>
-        const auth0Domain = 'dev-cgplpr7zt7i7xj7h.us.auth0.com';
-        const auth0ClientID = '6keazZlI4G0jRM6ySKJpbS5haMHOSpuj';
-        const namespace = 'https://api.tazl.cc/roles';
 
         window.onload = async function() {
             auth0 = new auth0.WebAuth({
                 domain: auth0Domain,
                 clientID: auth0ClientID,
-                redirectUri: 'http://127.0.0.1:5500/auth.html',
+                redirectUri: 'https://test.tazlsite.pages.dev/scoresnipers-v2/auth',
                 responseType: 'token id_token',
                 scope: 'openid profile email'
             });
@@ -103,8 +107,10 @@
     </script>
 </head>
 <body>
+    <div class="container">
     <h1>you are logged out! redirecting...</h1>
-    <p>redirect not working? click <a onclick="login()">here</a></p>
+    <p>redirect not working? click <a class="textdec" onclick="login()">here</a></p>
     <p class="test" id="login-status">You are logged out!</p>
+    </div>
 </body>
 </html>

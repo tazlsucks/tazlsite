@@ -50,14 +50,14 @@ a{
     color: gray;
   }
 
-footer {
+  footer {
     background-color: rgb(16,16,18);
     color: white;
     padding: 10px 20px;
     position: fixed;
     bottom: 0;
-    width: 100%;
-    text-align:center;
+    width: max-content;
+    text-align: center;
     font-family: "Montserrat";
   }
 

@@ -10,10 +10,8 @@
     <script src="https://cdn.auth0.com/js/auth0/9.17/auth0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="fuckmylife.js"></script>
     <script>
-        const auth0Domain = 'dev-cgplpr7zt7i7xj7h.us.auth0.com';
-        const auth0ClientID = '6keazZlI4G0jRM6ySKJpbS5haMHOSpuj';
-        const namespace = 'https://api.tazl.cc/roles';
         const requiredRole = 'priority';
         const bannedRole = 'banned';
 
@@ -59,7 +57,6 @@
                     window.location.href = 'no-access.html';
                 }
             } else {
-                document.getElementById('profile-status').innerHTML = 'You are logged out!';
                 window.location.href = 'auth.html';
             }
         };
@@ -98,13 +95,39 @@
 </head>
 <body>
     <!-- <h1 class="dashtext">dashboard</h1> -->
+    <div id="overlay" class="overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <button class="close-btn" id="closeBoxBtn">&times;</button>
+                <h3 class="modal-title">add user</h3>
+            </div>
+            <div class="modal-content">
+                <input class="text-input" type="text" placeholder="username" id="inputField"></input>
+                <button class="button" onclick="fetchUserInfo()">check user</button>
+            </div>
+            <div class="error" id="errorMessage"></div>
+            <div class="user-info" id="userInfo">
+                <p id="username"></p>
+                <p id="user"></p>
+                <p id="id"></p>
+                <img id="userThumbnail" alt="User Thumbnail">
+                <p id="desc">Description:</p>
+                <p id="userDescription"></p>
+            </div>
+            <button class="button add-btn">add</button>
+        </div>
+    </div>
     <div class="container">
+    <p id="greeting"></p>
     <p id="profile-status">Checking authentication status...</p>
     <div class="logincheck" id="access">
-    <a class="button">add user</a>
+    <div class="center-box">
+    <a class="button" id="openBoxBtn">add user</a>
     <a class="button" onclick="logout()">back to list</a>
     <a class="button" onclick="logouta()">log out</a>
+</div>
     <footer id="debug">loading..</footer>
+    
 </div>
 </body>
 </html>
