@@ -5,8 +5,8 @@
     async function fetchUserInfo() {
     const input = document.getElementById('inputField').value;
     const errorMessageElement = document.getElementById('errorMessage');
-    errorMessageElement.textContent = ''; // Clear previous error message
-    document.getElementById('userInfo').style.display = 'none'; // Hide user info initially
+    errorMessageElement.textContent = '';
+    document.getElementById('userInfo').style.display = 'none'; 
 
     if (!input) {
         errorMessageElement.textContent = 'Please enter a username';
@@ -15,13 +15,12 @@
 
     let url;
     if (/^\d+$/.test(input)) {
-        url = `https:/api.tazl.cc/userid/${input}`;
+        url = `https:/api.tazl.cc/userid/${input}`; // this no work :(
     } else {
         url = `https://api.tazl.cc/username/${input}`;
     }
 
     try {
-        // Fetch user info
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error('User not found');
@@ -39,6 +38,17 @@
         errorMessageElement.textContent = `Error: ${error.message}`;
     }
 }
+
+    async function addUser(){ // oh god, here we go
+        const input = document.getElementById('inputField').value;
+        const errorMessageElement = document.getElementById('errorMessage');
+        errorMessageElement.textContent = '';
+        
+        if (!input) {
+            errorMessageElement.textContent = 'Please enter a username';
+            return;
+        }
+    }
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -81,3 +91,39 @@ document.addEventListener("DOMContentLoaded", function() {
     
     });
 }});
+document.addEventListener('DOMContentLoaded', async () => {
+    if (document.getElementById("username-container")) {
+    const apiEndpoint = 'https://api.tazl.cc/items';
+    const usernameContainer = document.getElementById('username-container');
+
+    try {
+        // Fetch the JSON data from the API
+        const response = await fetch(apiEndpoint);
+        const data = await response.json();
+
+        // Loop through the data and create boxes
+        data.forEach(item => {
+            const username = item.username;
+            const url = `https://api.tazl.cc/username/${username}`;
+
+            // Create a box div
+            const boxDiv = document.createElement('div');
+            boxDiv.classList.add('username-box');
+
+            // Create a link
+            const link = document.createElement('a');
+            link.href = url;
+            link.textContent = username;
+
+            // Append the link to the box
+            boxDiv.appendChild(link);
+
+            // Append the box to the container
+            usernameContainer.appendChild(boxDiv);
+        });
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}});
+
+

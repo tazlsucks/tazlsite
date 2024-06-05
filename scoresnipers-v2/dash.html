@@ -62,9 +62,6 @@
         };
 
         function logout() {
-            window.location.href = 'index.html';
-        }
-        function logouta() {
             // Remove tokens and expiry time from localStorage
             auth0.logout({ returnTo: window.location.origin });
             document.cookie = 'access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
@@ -86,7 +83,7 @@
             const idToken = getCookie('id_token');
             if (idToken) {
                 const decoded = jwt_decode(idToken);
-                return decoded.nickname || 'User'; // Assuming 'nickname' field contains the username
+                return decoded.nickname || 'User';
             }
             return 'User';
         }
@@ -94,7 +91,6 @@
     </script>
 </head>
 <body>
-    <!-- <h1 class="dashtext">dashboard</h1> -->
     <div id="overlay" class="overlay">
         <div class="modal-box">
             <div class="modal-header">
@@ -114,7 +110,7 @@
                 <p id="desc">Description:</p>
                 <p id="userDescription"></p>
             </div>
-            <button class="button add-btn">add</button>
+            <button class="button add-btn" onclick="addUser()">add</button>
         </div>
     </div>
     <div class="container">
@@ -123,8 +119,8 @@
     <div class="logincheck" id="access">
     <div class="center-box">
     <a class="button" id="openBoxBtn">add user</a>
-    <a class="button" onclick="logout()">back to list</a>
-    <a class="button" onclick="logouta()">log out</a>
+    <a class="button" href="index.html">back to list</a>
+    <a class="button" onclick="logout()">log out</a>
 </div>
     <footer id="debug">loading..</footer>
     

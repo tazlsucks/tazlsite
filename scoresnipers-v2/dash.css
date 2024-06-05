@@ -145,6 +145,7 @@ footer {
   border: none;
   font-size: 24px;
   cursor: pointer;
+  background-color: #ccc;
 }
 
 .modal-content {
@@ -170,6 +171,31 @@ footer {
   margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .modal-box {
+      width: 95%; /* Reduce width on smaller screens */
+      padding: 15px;
+  }
+
+  .btn {
+      font-size: 14px; /* Adjust button font size */
+      padding: 8px 16px;
+  }
+
+  .modal-title {
+      font-size: 16px; /* Adjust title font size */
+  }
+
+  .modal-content {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: stretch; /* Ensure full width for child elements */
+  }
+
+  .text-input {
+      margin: 0 0 10px 0; /* Adjust margin for stacking */
+  }
 }
 
 .user-info {

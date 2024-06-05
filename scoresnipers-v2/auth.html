@@ -22,7 +22,7 @@
             auth0 = new auth0.WebAuth({
                 domain: auth0Domain,
                 clientID: auth0ClientID,
-                redirectUri: 'https://test.tazlsite.pages.dev/scoresnipers-v2/auth',
+                redirectUri: 'https://test.tazlsite.pages.dev/auth.html',
                 responseType: 'token id_token',
                 scope: 'openid profile email'
             });
@@ -99,8 +99,7 @@
         setTimeout(1000);
         login();
          } else {
-        // Protocol is not HTTPS, wait and check again
-        setTimeout(waitForHttps, 100); // Check every 100 milliseconds
+        setTimeout(waitForHttps, 100);
          }
     }
 
