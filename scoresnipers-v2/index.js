@@ -1,14 +1,12 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const apiEndpoint = 'https://api.tazl.cc/items';
+    const activeContainer = document.getElementById('active-container');
     const usernameContainer = document.getElementById('username-container');
+    const activeUsernames = [''];
     let usernames = [];
 
     async function fetchUserInfo(username) {
-        const errorMessageElement = document.getElementById('errorMessage') || document.createElement('div');
-        if (!document.getElementById('errorMessage')) {
-            errorMessageElement.id = 'errorMessage';
-            document.body.appendChild(errorMessageElement);
-        }
+        const errorMessageElement = document.getElementById('errorMessage');
         errorMessageElement.textContent = '';
 
         if (!username) {
@@ -30,18 +28,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    async function displayAllUsers() {
-        usernameContainer.innerHTML = '';
+    async function displayUsers(users, container) {
+        container.innerHTML = '';
 
-        for (const item of usernames) {
-            const username = item.username;
-            const data = await fetchUserInfo(username);
+        // Sort usernames alphabetically
+        users.sort((a, b) => a.username.localeCompare(b.username));
 
+        // Fetch user data in parallel
+        const userPromises = users.map(item => fetchUserInfo(item.username));
+        const userDataArray = await Promise.all(userPromises);
+
+        userDataArray.forEach((data, index) => {
             if (data) {
                 const { userInfo, thumbnailUrl } = data;
                 const boxLink = document.createElement('a');
                 boxLink.href = `https://www.roblox.com/users/${userInfo.id}/profile`;
-                boxLink.target = '_blank'; // Open in a new tab
+                boxLink.target = '_blank';
                 boxLink.classList.add('username-box');
                 
                 const boxDiv = document.createElement('div');
@@ -53,14 +55,23 @@ document.addEventListener('DOMContentLoaded', async () => {
                 `;
                 
                 boxLink.appendChild(boxDiv);
-                usernameContainer.appendChild(boxLink);
+                container.appendChild(boxLink);
             } else {
                 const errorBox = document.createElement('div');
                 errorBox.classList.add('username-box');
                 errorBox.textContent = 'Error fetching data';
-                usernameContainer.appendChild(errorBox);
+                container.appendChild(errorBox);
             }
-        }
+        });
+    }
+
+    async function displayAllUsers() {
+        const activeUsers = usernames.filter(item => activeUsernames.includes(item.username));
+        const regularUsers = usernames.filter(item => !activeUsernames.includes(item.username));
+
+        await displayUsers(activeUsers, activeContainer);
+
+        await displayUsers(regularUsers, usernameContainer);
     }
 
     try {

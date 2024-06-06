@@ -61,7 +61,6 @@ a{
   }
 
 footer {
-    background-color: rgb(16,16,18);
     color: white;
     padding: 10px 20px;
     position: fixed;
@@ -70,7 +69,6 @@ footer {
     text-align: center;
     font-family: "Montserrat";
   }
-
   .login {
     display: none;
 }
@@ -111,7 +109,6 @@ footer {
   text-align: center;
 }
 
-
 .overlay {
   display: none;
   position: fixed;
@@ -125,6 +122,7 @@ footer {
 }
 
 .modal-box {
+  transition: transform 0.2s;
   background-color: rgba(44,44,44,255);
   padding: 20px;
   border-radius: 8px;
@@ -135,6 +133,9 @@ footer {
   max-width: 500px; /* Max width */
   max-height: 80%; /* Max height */
   overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
+}
+.modal-box:hover{
+  transform: scale(1.05);
 }
 
 .close-btn {
@@ -209,4 +210,34 @@ footer {
   color: red;
   margin-top: 5px;
   font-family: "DM Sans", monospace, sans-serif;
+}
+
+.info-button {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #1d1d1d;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+  font-family: "Montserrat", monospace, sans-serif;
+}
+
+.info-content {
+  display: none;
+  position: absolute;
+  background-color: #1d1d1d;
+  color: white;
+  padding: 10px;
+  border: 1px solid #1d1d1d;
+  border-radius: 5px;
+  width: 200px;
+  z-index: 1;
+  font-family: "Montserrat", monospace, sans-serif;
+}
+
+.info-button:hover + .info-content {
+  display: block;
 }
