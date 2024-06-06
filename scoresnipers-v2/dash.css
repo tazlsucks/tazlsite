@@ -211,6 +211,11 @@ footer {
   margin-top: 5px;
   font-family: "DM Sans", monospace, sans-serif;
 }
+.success {
+  color: green;
+  margin-top: 5px;
+  font-family: "DM Sans", monospace, sans-serif;
+}
 
 .info-button {
   display: inline-block;

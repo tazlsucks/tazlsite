@@ -39,16 +39,37 @@
     }
 }
 
-    async function addUser(){ // oh god, here we go
-        const input = document.getElementById('inputField').value;
-        const errorMessageElement = document.getElementById('errorMessage');
-        errorMessageElement.textContent = '';
-        
-        if (!input) {
-            errorMessageElement.textContent = 'Please enter a username';
-            return;
-        }
+async function addUser() {
+    const input = document.getElementById('inputField').value;
+    const errorMessageElement = document.getElementById('errorMessage');
+    const successMessageElement = document.getElementById('successMessage');
+    errorMessageElement.textContent = '';
+    successMessageElement.textContent = '';
+
+    if (!input) {
+        errorMessageElement.textContent = 'Please enter a username';
+        return;
     }
+
+    try {
+        const response = await fetch('https://solitary-hat-df9c.thisisa223.workers.dev/adduser', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username: input })
+        });
+
+        if (response.ok) {
+            successMessageElement.textContent = 'User added successfully!';
+        } else {
+            const errorText = await response.text();
+            errorMessageElement.textContent = `Error: ${errorText}`;
+        }
+    } catch (error) {
+        errorMessageElement.textContent = `Error: ${error.message}`;
+    }
+}
 
 
 document.addEventListener("DOMContentLoaded", function() {
