@@ -50,12 +50,13 @@ async function addUser() {
         errorMessageElement.textContent = 'Please enter a username';
         return;
     }
-
+    
     try {
         const response = await fetch('https://solitary-hat-df9c.thisisa223.workers.dev/adduser', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer F8SAN6301BB'
             },
             body: JSON.stringify({ username: input })
         });
