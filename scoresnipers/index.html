@@ -6,6 +6,7 @@
     <title>NNB Score Snipers</title>
     <link rel="stylesheet" href="scoresniper.css">
     <link rel="icon" href="Legacy_icon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         .textdec{
             text-decoration: underline;
@@ -42,6 +43,24 @@
         <p><a href="https://www.roblox.com/users/3414003642/profile">@technodude2010</a></p>
 <!--         <p><a href="https://www.roblox.com/users/3782950638/profile">@spongebobguy17746</a></p> -->
     </div>
+
+<script>
+
+if (!localStorage.getItem('notificationClosed')) {
+            document.getElementById('notification-box').style.display = 'block';
+        }
+
+
+document.getElementById('close-button').addEventListener('click', function() {
+            localStorage.setItem('notificationClosed', 'true');
+            document.getElementById('notification-box').classList.add('animate__fadeOutUp');
+            setTimeout(function() {
+                document.getElementById('notification-box').style.display = 'none';
+            }, 1000); // Match the duration of the animation
+        });
+
+
+</script>
 
 <h3>this list only has USERNAMES! not DISPLAY NAMES!</h3>
 </body>   

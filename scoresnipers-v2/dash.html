@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard - scoresnipers</title>
+    <link rel="icon" href="Legacy_icon.ico">
+    <link rel="stylesheet" href="dash.css">
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <script src="https://cdn.auth0.com/js/auth0/9.17/auth0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="fuckmylife.js"></script>
+    <script>
+        const requiredRole = 'priority';
+        const bannedRole = 'banned';
+
+            auth0 = new auth0.WebAuth({
+                domain: auth0Domain,
+                clientID: auth0ClientID,
+                responseType: 'token id_token',
+                scope: 'openid profile email'
+            });
+
+        function isAuthenticated() {
+            const expiresAt = getCookie('expires_at');
+            return new Date().getTime() < expiresAt;
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        function hasRequiredRole(roles, requiredRole) {
+            return roles.includes(requiredRole);
+        }
+
+        function hasBannedRole(roles, bannedRole) {
+            return roles.includes(bannedRole);
+        }
+
+        window.onload = function() {
+            if (isAuthenticated()) {
+                const roles = getRoles();
+                if (hasBannedRole(roles, bannedRole)){
+                    window.location.href = 'banned.html';
+                }else
+                if (hasRequiredRole(roles, requiredRole)) {
+                    const username = getUsername();
+                    document.getElementById('profile-status').innerHTML = `Hello, ${username}!`;
+                    document.getElementById(`debug`).innerHTML = `debug: ${roles.join(', ')}`;
+                    console.log("role allowed")
+                    document.getElementById('access').style.display = 'block';
+                } else {
+                    window.location.href = 'no-access.html';
+                }
+            } else {
+                window.location.href = 'auth.html';
+            }
+        };
+
+        function logout() {
+            // Remove tokens and expiry time from localStorage
+            auth0.logout({ returnTo: window.location.origin });
+            document.cookie = 'access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+            document.cookie = 'id_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+            document.cookie = 'expires_at=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+            document.getElementById('login-status').innerHTML = 'You are logged out!';
+        }
+
+        function getRoles() {
+            const idToken = getCookie('id_token');
+            if (idToken) {
+                const decoded = jwt_decode(idToken);
+                return decoded[namespace] || [];
+            }
+            return [];
+        }
+
+        function getUsername() {
+            const idToken = getCookie('id_token');
+            if (idToken) {
+                const decoded = jwt_decode(idToken);
+                return decoded.nickname || 'User';
+            }
+            return 'User';
+        }
+
+    </script>
+</head>
+<body>
+    <div id="overlay" class="overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <button class="close-btn" id="closeBoxBtn">&times;</button>
+                <h3 class="modal-title">add user</h3>
+            </div>
+            <div class="modal-content">
+                <input class="text-input" type="text" placeholder="username" id="inputField"></input>
+                <button class="button" onclick="fetchUserInfo()">check user</button>
+            </div>
+            <div class="error" id="errorMessage"></div>
+            <div class="success" id="successMessage"></div>
+            <div class="user-info" id="userInfo">
+                <p id="username"></p>
+                <p id="user"></p>
+                <p id="id"></p>
+                <img id="userThumbnail" alt="User Thumbnail">
+                <p id="desc">Description:</p>
+                <p id="userDescription"></p>
+            </div>
+            <button class="button add-btn" onclick="addUser()">add</button>
+        </div>
+    </div>
+    <div class="container">
+    <p id="greeting"></p>
+    <p id="profile-status">Checking authentication status...</p>
+    <div class="logincheck" id="access">
+    <div class="center-box">
+    <a class="button" id="openBoxBtn">add user</a>
+    <a class="button" href="index.html">back to list</a>
+    <a class="button" href="https://account.tazl.cc" target="_blank">your account</a>
+    <a class="button" id="logbutton" onclick="logout()">log out</a>
+</div>
+    <footer id="debug">loading..</footer>
+</div>
+</body>
+</html>

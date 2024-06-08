@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>access denied</title>
+    <link rel="stylesheet" href="scoresniper.css">
+    <link rel="icon" href="Legacy_icon.ico">
+    <script src="https://cdn.auth0.com/js/auth0/9.17/auth0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="fuckmylife.js"></script>
+    <script>
+            auth0 = new auth0.WebAuth({
+                domain: auth0Domain,
+                clientID: auth0ClientID,
+                responseType: 'token id_token',
+                scope: 'openid profile email'
+            });
+
+        window.onload = function(){
+            const roles = getRoles();
+            getRoles();
+            document.getElementById(`debug`).innerHTML = `debug: ${roles.join(', ')}`;
+        }
+        
+        
+        function logout() {
+            auth0.logout({ returnTo: window.location.origin });
+            document.cookie = 'access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+            document.cookie = 'id_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+            document.cookie = 'expires_at=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+            document.getElementById('login-status').innerHTML = 'You are logged out!';
+        }
+        function getRoles() {
+            const idToken = getCookie('id_token');
+            if (idToken) {
+                const decoded = jwt_decode(idToken);
+                return decoded[namespace] || [];
+            }
+            return [];
+        }
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+    </script>
+</head>
+<body>
+    <h1>access denied</h1>
+    <h3>if you believe this is a mistake, or if you just signed up, please message me (tazl) on discord!</h3>
+    <a class="button" onclick="logout()">log out</a>
+    <footer id="debug">loading..</footer>
+</body>
+</html>
