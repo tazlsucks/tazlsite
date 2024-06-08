@@ -52,7 +52,7 @@ async function addUser() {
     }
     
     try {
-        const response = await fetch('https://solitary-hat-df9c.thisisa223.workers.dev/adduser', {
+        const response = await fetch('https://hat.tazl.cc/adduser', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
