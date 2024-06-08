@@ -51,6 +51,7 @@ a{
   }
 
   footer {
+    display: flex;
     color: white;
     padding: 10px 20px;
     position: fixed;
@@ -58,6 +59,9 @@ a{
     width: max-content;
     text-align: center;
     font-family: "Montserrat";
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
   .login {
@@ -108,6 +112,12 @@ a{
 }
 
 #active-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+#donate-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;

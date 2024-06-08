@@ -246,3 +246,7 @@ footer {
 .info-button:hover + .info-content {
   display: block;
 }
+
+#logbutton:hover{
+  background-color: rgb(54, 0, 0)
+}
