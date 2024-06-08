@@ -61,8 +61,8 @@ async function addUser() {
             body: JSON.stringify({ username: input })
         });
     
-        if (response.status === 429) {
-            errorMessageElement.textContent = 'You are being rate limited! Please try again later.';
+        if (response.status === 500) {
+            errorMessageElement.textContent = 'Error: User already added!';
         } else if (response.ok) {
             successMessageElement.textContent = 'User added successfully!';
         } else {
