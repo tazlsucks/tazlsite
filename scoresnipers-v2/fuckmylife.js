@@ -60,8 +60,10 @@ async function addUser() {
             },
             body: JSON.stringify({ username: input })
         });
-
-        if (response.ok) {
+    
+        if (response.status === 429) {
+            errorMessageElement.textContent = 'You are being rate limited! Please try again later.';
+        } else if (response.ok) {
             successMessageElement.textContent = 'User added successfully!';
         } else {
             const errorText = await response.text();
@@ -70,7 +72,7 @@ async function addUser() {
     } catch (error) {
         errorMessageElement.textContent = `Error: ${error.message}`;
     }
-}
+}    
 
 
 document.addEventListener("DOMContentLoaded", function() {
