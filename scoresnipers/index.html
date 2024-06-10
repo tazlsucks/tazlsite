@@ -12,8 +12,56 @@
             text-decoration: underline;
         }
     </style>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const notification = document.getElementById('notification');
+    const closeButton = document.getElementById('closeButton');
+    const overlay = document.getElementById('overlay');
+
+    // Helper function to hide elements with fade-out effect
+    function hideElementWithAnimation(element, hideClass, animationCallback) {
+        element.classList.add(hideClass);
+        // Use a timeout that matches the CSS transition duration to hide the element after fade-out
+        setTimeout(() => {
+            element.style.display = 'none';
+            element.classList.remove(hideClass);
+            if (animationCallback) animationCallback();
+        }, 500); // Match this with the transition duration in CSS
+    }
+
+    // Check if the user has already dismissed the notification
+    if (!localStorage.getItem('notificationDismissed')) {
+        // Show the notification box and overlay with animations
+        notification.classList.add('animate__fadeInDown', 'animate__animated', 'show');
+        overlay.classList.add('show');
+    }
+
+    closeButton.addEventListener('click', function () {
+        // Hide the notification box and overlay with animations
+        hideElementWithAnimation(notification, 'animate__fadeOutUp', () => {
+            localStorage.setItem('notificationDismissed', 'true');
+        });
+        overlay.classList.remove('show');
+        overlay.classList.add('hide');
+    });
+
+    overlay.addEventListener('click', function () {
+        // Hide the notification box and overlay with animations without setting localStorage
+        hideElementWithAnimation(notification, 'animate__fadeOutUp');
+        overlay.classList.remove('show');
+        overlay.classList.add('hide');
+    });
+});
+    </script>
 </head>
 <body>
+    <div id="overlay" class="overlay"></div>
+    <div id="notification" class="notification">
+        <p>scoresnipers v2 is here! 🎉</p>
+        <p>click below to see the new and improved list!</p>
+        <a class="button" href="/scoresnipers-v2/index.html">new list</a>
+        <a class="button" id="closeButton">don't show again</a>
+    </div>
     <h1>nico's nextbots score snipers</h1>
     <h2>a list of assholes who want to waste your robux</h2>
     <h3>get a full description of someone <a class="textdec" href="/getuser.html">here</a></h3>
@@ -43,25 +91,6 @@
         <p><a href="https://www.roblox.com/users/3414003642/profile">@technodude2010</a></p>
 <!--         <p><a href="https://www.roblox.com/users/3782950638/profile">@spongebobguy17746</a></p> -->
     </div>
-
-<script>
-
-if (!localStorage.getItem('notificationClosed')) {
-            document.getElementById('notification-box').style.display = 'block';
-        }
-
-
-document.getElementById('close-button').addEventListener('click', function() {
-            localStorage.setItem('notificationClosed', 'true');
-            document.getElementById('notification-box').classList.add('animate__fadeOutUp');
-            setTimeout(function() {
-                document.getElementById('notification-box').style.display = 'none';
-            }, 1000); // Match the duration of the animation
-        });
-
-
-</script>
-
 <h3>this list only has USERNAMES! not DISPLAY NAMES!</h3>
 </body>   
 </html>
