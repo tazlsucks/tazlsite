@@ -80,11 +80,15 @@ footer {
     cursor: pointer;
     font-family: "Montserrat", monospace, sans-serif;
   }
-  
+
   .button:hover {
     background-color: rgb(40, 40, 40)
   }
 
+  #notification-box {
+    text-align: center;
+    justify-content: center;
+  }
   .overlay {
     position: fixed;
     top: 0;
