@@ -78,14 +78,48 @@ footer {
     cursor: pointer;
     font-family: "Montserrat", monospace, sans-serif;
   }
-  
+
   .button:hover {
     background-color: rgb(40, 40, 40)
   }
+<<<<<<< Updated upstream
 
   #notification-box {
     text-align: center;
     justify-content: center;
+=======
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1000; /* Just below the notification */
+    display: none; /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Smooth opacity change */
+}
+
+.overlay.show {
+    display: block;
+    opacity: 1;
+}
+
+.overlay.hide {
+    opacity: 0; /* This will trigger the fade-out */
+    transition: opacity 0.5s ease; /* Ensure the fade-out is smooth */
+}
+
+/* Notification box */
+.notification {
+    position: fixed;
+    left: 26%;
+    transform: translate(-50%, -50%) scale(1);
+    background-color: #222;
+    color: #fff;
+>>>>>>> Stashed changes
     padding: 20px;
     display: none; /* Initially hidden */
 }
