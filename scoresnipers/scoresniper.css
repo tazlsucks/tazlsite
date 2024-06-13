@@ -82,13 +82,11 @@ footer {
   .button:hover {
     background-color: rgb(40, 40, 40)
   }
-<<<<<<< Updated upstream
 
   #notification-box {
     text-align: center;
     justify-content: center;
-=======
-  
+  }
   .overlay {
     position: fixed;
     top: 0;
@@ -119,7 +117,6 @@ footer {
     transform: translate(-50%, -50%) scale(1);
     background-color: #222;
     color: #fff;
->>>>>>> Stashed changes
     padding: 20px;
     display: none; /* Initially hidden */
 }
