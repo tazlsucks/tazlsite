@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="images/LsD4KfW.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="main.js"></script>
 </head>
 <body>
     <div class="animate__animated animate__slideInDown container page1">
@@ -49,7 +50,7 @@
         <h1>about me</h1>
         <h2>17 year old video game player</h2>
         <p>
-            i really like computers and software! i've been programming off and on<br>for about three years now.
+            i really like computers and software! i've been programming off and on<br>for a couple years now.
             <br>
         </p>
         <h2><iframe src="https://status.tazldied.cc/badge?theme=dark" width="200" height="30" frameborder="0" scrolling="no"></iframe></h2>
@@ -57,33 +58,5 @@
         <h2></h2>
         <button class="button"onclick="toggleAbout()">back</button>
     </div>
-    <script>
-        function toggleWork() {
-            // Toggle the display of both pages
-            var page1 = document.querySelector('.page1');
-            var works = document.querySelector('.works');
-    
-            if (page1.style.display === 'none') {
-                page1.style.display = 'block';
-                works.style.display = 'none';
-            } else {
-                page1.style.display = 'none';
-                works.style.display = 'block';
-            }
-        }
-        function toggleAbout() {
-                // Toggle the display of both pages
-                var page1 = document.querySelector('.page1');
-                var about = document.querySelector('.about');
-        
-                if (page1.style.display === 'none') {
-                    page1.style.display = 'block';
-                    about.style.display = 'none';
-                } else {
-                    page1.style.display = 'none';
-                    about.style.display = 'block';
-                }
-            }
-    </script>
 </body>
 </html>
