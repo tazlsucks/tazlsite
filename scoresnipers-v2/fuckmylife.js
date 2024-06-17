@@ -115,6 +115,29 @@ document.addEventListener("DOMContentLoaded", function() {
     
     });
 }});
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("greeting")) {
+    const openBoxBtn = document.getElementById("openBoxBtn2");
+    const closeBoxBtn = document.getElementById("closeBoxBtn2");
+    const overlay = document.getElementById("overlay2");
+
+    openBoxBtn.addEventListener("click", function() {
+        overlay.style.display = "flex";
+    });
+
+    closeBoxBtn.addEventListener("click", function() {
+        overlay.style.display = "none";
+    });
+
+    overlay.addEventListener("click", function(event) {
+        if (event.target === overlay) {
+            overlay.style.display = "none";
+        }
+    
+    });
+}});
+
 document.addEventListener('DOMContentLoaded', async () => {
     if (document.getElementById("username-container")) {
     const apiEndpoint = 'https://api.tazl.cc/items';
