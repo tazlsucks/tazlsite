@@ -115,34 +115,53 @@ document.addEventListener("DOMContentLoaded", function() {
     
     });
 }});
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("greeting")) {
+    const openBoxBtn = document.getElementById("openBoxBtn2");
+    const closeBoxBtn = document.getElementById("closeBoxBtn2");
+    const overlay = document.getElementById("overlay2");
+
+    openBoxBtn.addEventListener("click", function() {
+        overlay.style.display = "flex";
+    });
+
+    closeBoxBtn.addEventListener("click", function() {
+        overlay.style.display = "none";
+    });
+
+    overlay.addEventListener("click", function(event) {
+        if (event.target === overlay) {
+            overlay.style.display = "none";
+        }
+    
+    });
+}});
+
 document.addEventListener('DOMContentLoaded', async () => {
     if (document.getElementById("username-container")) {
     const apiEndpoint = 'https://api.tazl.cc/items';
     const usernameContainer = document.getElementById('username-container');
 
     try {
-        // Fetch the JSON data from the API
+
         const response = await fetch(apiEndpoint);
         const data = await response.json();
 
-        // Loop through the data and create boxes
+
         data.forEach(item => {
             const username = item.username;
             const url = `https://api.tazl.cc/username/${username}`;
 
-            // Create a box div
             const boxDiv = document.createElement('div');
             boxDiv.classList.add('username-box');
 
-            // Create a link
             const link = document.createElement('a');
             link.href = url;
             link.textContent = username;
 
-            // Append the link to the box
             boxDiv.appendChild(link);
 
-            // Append the box to the container
             usernameContainer.appendChild(boxDiv);
         });
     } catch (error) {
