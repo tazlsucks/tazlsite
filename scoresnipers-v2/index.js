@@ -53,6 +53,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <img src="${thumbnailUrl}" alt="${userInfo.displayName || userInfo.name}">
                 <p>${userInfo.id || userInfo.name}</p>
                 `;
+
+                const img = boxDiv.querySelector('img');
+                img.onerror = function() {
+                    this.src = 'Legacy_icon.ico';  // Fallback image
+                };
                 
                 boxLink.appendChild(boxDiv);
                 container.appendChild(boxLink);
