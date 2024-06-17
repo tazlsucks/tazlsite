@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                 const img = boxDiv.querySelector('img');
                 img.onerror = function() {
-                    this.src = 'Legacy_icon.ico';  // Fallback image
+                    this.src = 'Legacy_icon.ico';
                 };
                 
                 boxLink.appendChild(boxDiv);
