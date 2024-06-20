@@ -1,6 +1,3 @@
-
-
-
 function toggleWork() {
     // Toggle the display of both pages
     var page1 = document.querySelector('.page1');
@@ -26,4 +23,9 @@ function toggleAbout() {
             page1.style.display = 'none';
             about.style.display = 'block';
         }
+    }
+
+    function onTurnstileSuccess(token) {
+        // Enable the email button
+        document.getElementById('emailButton').disabled = false;
     }

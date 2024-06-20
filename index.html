@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta name="title" content="tazldied" />
     <meta name="description" content=":3" />
     <meta property="og:type" content="website" />
@@ -21,6 +20,7 @@
     <link rel="icon" type="image/x-icon" href="images/LsD4KfW.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="main.js"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
     <div class="animate__animated animate__slideInDown container page1">
@@ -54,7 +54,8 @@
             <br>
         </p>
         <h2><iframe src="https://status.tazldied.cc/badge?theme=dark" width="200" height="30" frameborder="0" scrolling="no"></iframe></h2>
-        <button class="button", onclick="window.location = `mailto:tazl@tazldied.cc`;">email me</button>
+        <div id="turnstile-container" class="cf-turnstile" data-sitekey="0x4AAAAAAAZze-nCXeZF5jPy" data-callback="onTurnstileSuccess" role="presentation"></div>
+        <button class="button" id="emailButton" disabled onclick="window.location.href='mailto:tazl@tazldied.cc';">email me</button>
         <h2></h2>
         <button class="button"onclick="toggleAbout()">back</button>
     </div>
