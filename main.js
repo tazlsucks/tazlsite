@@ -26,7 +26,6 @@
     }
 
     function onTurnstileSuccess(token) {
-        // Enable the email button
         document.getElementById('turn').disabled = false;
     }
 
