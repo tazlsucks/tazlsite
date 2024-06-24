@@ -1,3 +1,14 @@
+const siteKey = "0x4AAAAAAAZze-nCXeZF5jPy";
+    
+function init() {
+    const turnstileContainer = document.getElementById('turnstile-container');
+    if (turnstileContainer) {
+        turnstileContainer.setAttribute('data-sitekey', siteKey);
+    }
+}
+document.addEventListener('DOMContentLoaded', init);
+
+
     function toggleWork() {
     // Toggle the display of both pages
     var page1 = document.querySelector('.page1');
@@ -26,6 +37,16 @@
     }
 
     function onTurnstileSuccess(token) {
+        const contactInfoContainer = document.getElementById('contact-info');
+        if (contactInfoContainer) {
+            contactInfoContainer.innerHTML = `
+                <button class="button" id="turn" disabled onclick="window.location.href='mailto:tazl@tazldied.cc';">email me</button>
+            `;
+            const elements = document.querySelectorAll('.turn');
+            elements.forEach(element => {
+                element.classList.remove('disabled');
+            });
+        }
         document.getElementById('turn').disabled = false;
     }
 
