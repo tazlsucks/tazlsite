@@ -10,6 +10,10 @@ body{
   background-color: rgba(44,44,44,255);
 }
 
+.page-container {
+  min-height: 75vh;
+}
+
 h1{
     color: white;
     font-size: 60px;
@@ -50,19 +54,44 @@ a{
     color: gray;
   }
 
-  footer {
+footer {
+    background-color: rgb(19, 19, 20);
+    color: rgb(54, 54, 54);
+    padding: 20px 0;
+}
+footer a{
+    color: rgb(54, 54, 54);
+}
+
+.footer-container {
     display: flex;
-    color: white;
-    padding: 10px 0px;
-    position: fixed;
-    bottom: 0;
-    width: max-content;
-    text-align: center;
-    font-family: "Montserrat";
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 1px;
-  }
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
 
   .login {
     display: none;
