@@ -9,32 +9,44 @@ function init() {
 document.addEventListener('DOMContentLoaded', init);
 
 
-    function toggleWork() {
-    // Toggle the display of both pages
-    var page1 = document.querySelector('.page1');
-    var works = document.querySelector('.works');
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if the page loaded with a hash and display the appropriate section
+    toggleSectionBasedOnHash();
+    window.onhashchange = toggleSectionBasedOnHash; // Handle hash change when the user navigates
+});
 
-    if (page1.style.display === 'none') {
-        page1.style.display = 'block';
-        works.style.display = 'none';
-    } else {
-        page1.style.display = 'none';
+function toggleSectionBasedOnHash() {
+    const hash = window.location.hash;
+    const page1 = document.querySelector('.page1');
+    const about = document.querySelector('.about');
+    const works = document.querySelector('.works');
+
+    // Hide all sections initially
+    about.style.display = 'none';
+    works.style.display = 'none';
+    page1.style.display = 'none';
+
+    // Show the section based on the hash
+    if (hash === '#about') {
+        about.style.display = 'block';
+    } else if (hash === '#works') {
         works.style.display = 'block';
+    } else {
+        page1.style.display = 'block'; // Show the main page by default
     }
 }
-    function toggleAbout() {
-        // Toggle the display of both pages
-        var page1 = document.querySelector('.page1');
-        var about = document.querySelector('.about');
 
-        if (page1.style.display === 'none') {
-            page1.style.display = 'block';
-            about.style.display = 'none';
-        } else {
-            page1.style.display = 'none';
-            about.style.display = 'block';
-        }
-    }
+function toggleAbout() {
+    window.location.hash = 'about';
+}
+
+function toggleWork() {
+    window.location.hash = 'works';
+}
+
+function toggleBack(){
+    window.location.hash = '';
+}
 
     function onTurnstileSuccess(token) {
         const contactInfoContainer = document.getElementById('contact-info');
@@ -53,8 +65,8 @@ document.addEventListener('DOMContentLoaded', init);
     async function fetchUserInfo() {
         const input = document.getElementById('inputField').value;
         const errorMessageElement = document.getElementById('errorMessage');
-        errorMessageElement.textContent = ''; // Clear previous error message
-        document.getElementById('userInfo').style.display = 'none'; // Hide user info initially
+        errorMessageElement.textContent = '';
+        document.getElementById('userInfo').style.display = 'none';
 
         if (!input) {
             errorMessageElement.textContent = 'Please enter a username';
