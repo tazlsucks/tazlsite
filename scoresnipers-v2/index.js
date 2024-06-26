@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                 const img = boxDiv.querySelector('img');
                 img.onerror = function() {
-                    this.src = 'Legacy_icon.ico';
+                    this.src = 'https://cdn.tazl.cc/images/nnb.ico';
                 };
                 
                 boxLink.appendChild(boxDiv);
