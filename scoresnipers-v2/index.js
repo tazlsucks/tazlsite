@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                 const img = boxDiv.querySelector('img');
                 img.onerror = function() {
-                    this.src = 'https://cdn.tazl.cc/images/nnb.ico';
+                    this.src = 'https://cdn.tazl.cc/images/error.ico';
                 };
                 
                 boxLink.appendChild(boxDiv);
