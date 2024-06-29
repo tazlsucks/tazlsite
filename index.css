@@ -72,7 +72,27 @@ footer {
   }
 
   .button-container {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+
+  @media (max-width: 600px) {
+    .button-container {
+      gap: 5px;
+      max-width: calc(2 * 200px + 1 * 10px);
+    }
+  }
+
+  /* Further adjustments for very small screens */
+  @media (max-width: 400px) {
+    .button-container {
+      max-width: 200px;
+    }
   }
   
   .button {
@@ -137,4 +157,3 @@ input {
   margin-top: 20px;
   font-family: "DM Sans", monospace, sans-serif;
 }
-
