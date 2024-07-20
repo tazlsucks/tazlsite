@@ -80,21 +80,6 @@ footer {
     width: 100%;
   }
 
-
-  @media (max-width: 600px) {
-    .button-container {
-      gap: 5px;
-      max-width: calc(2 * 200px + 1 * 10px);
-    }
-  }
-
-  /* Further adjustments for very small screens */
-  @media (max-width: 400px) {
-    .button-container {
-      max-width: 200px;
-    }
-  }
-
   img{
     max-width: 300px;
     max-height: 300px;
