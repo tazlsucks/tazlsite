@@ -15,6 +15,7 @@
     <meta property="twitter:description" content="incredibly useful discord bot" />
     <title>swear jar discord bot</title>
     <script src="main.js"></script>
+    <script src="swearjar.js"></script>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -28,7 +29,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container page1">
         <h1>swear jar</h1>
         <h2>an incredibly useful discord bot, and the greatest thing ive ever made.</h2>
         <img src="https://cdn.tazl.cc/images/swearjar1.png">
@@ -44,7 +45,15 @@
         <button class="button" id="turn" onclick="window.location.href='https://discord.com/oauth2/authorize?client_id=1263308860429701205&permissions=8&integration_type=0&scope=bot';" disabled>invite</button>
         <br>
         <h1></h1>
-            <p>(if you would like to get your swears reset, or get deleted from the database entirely, please <a style="text-decoration: underline;" href="mailto:tazl@tazldied.cc">email me</a> or open a <a style="text-decoration: underline;" href="https://discord.com/invite/CrDKkkxHVy">support ticket</a>.)</p>
+        <p>(if you would like to get your swears reset, or get deleted from the database entirely, please <a style="text-decoration: underline;" href="mailto:tazl@tazldied.cc">email me</a> or open a <a style="text-decoration: underline;" href="https://discord.com/invite/CrDKkkxHVy">support ticket</a>.)</p>
+        <button class="button" onclick="togglePrivacy()">privacy</button>
+        <br>
+        <h1></h1>
+        </div>
+        <div class="container privacy">
+            <h1>privacy stuff</h1>
+            <p>Swear Jar only stores your Discord User ID and how many swears you have.<br>Swear Jar does not store messages or the content of the messages.</p>
+            <button class="button" onclick="toggleBack()">back</button>
         </div>
         <br>
 </body>
