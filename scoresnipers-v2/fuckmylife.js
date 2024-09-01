@@ -1,5 +1,5 @@
-    const auth0Domain = 'dev-cgplpr7zt7i7xj7h.us.auth0.com';
-    const auth0ClientID = '6keazZlI4G0jRM6ySKJpbS5haMHOSpuj';
+    const auth0Domain = 'tazl.us.auth0.com';
+    const auth0ClientID = 'MuWgJdV5awapz7t52nlslZXNjpuWWu64';
     const namespace = 'https://api.tazl.cc/roles';
     
     async function fetchUserInfo() {
