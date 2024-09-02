@@ -43,15 +43,14 @@ p{
 }
 
 footer {
-    background-color: rgb(16,16,18);
-    color: #fff;
-    padding: 10px 20px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align:center;
-    
-  }
+  background-color: rgb(16,16,18);
+  color: rgb(16,16,18);
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align:center;
+}
 
   .animate__animated.animate__slideInDown {
     --animate-duration: 0.57s;
