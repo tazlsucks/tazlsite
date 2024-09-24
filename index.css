@@ -4,4 +4,17 @@
 
 body, html{
     background-color: #050505;
+    font-family: "DM Sans", monospace, sans-serif;
+    color: white;
+}
+
+.hero-container{
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-container h1{
+  font-size: 50px;
 }
