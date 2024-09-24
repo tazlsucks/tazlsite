@@ -8,19 +8,6 @@ function init() {
 }
 document.addEventListener('DOMContentLoaded', init);
 
-
-function toggleAbout() {
-    window.location.hash = 'about';
-}
-
-function toggleWork() {
-    window.location.hash = 'works';
-}
-
-function toggleBack(){
-    window.location.hash = '';
-}
-
     function onTurnstileSuccess(token) {
         const contactInfoContainer = document.getElementById('contact-info');
         if (contactInfoContainer) {

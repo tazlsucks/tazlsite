@@ -35,7 +35,7 @@ section {
   z-index: 10;
 }
 .hero-section.top-hero {
-  height: 35vh;
+  height: 25vh;
 }
 .hero-content.top-hero-content {
   font-size: 0.8em;
@@ -43,6 +43,7 @@ section {
 
 .hero-content h1 {
   font-size: 70px;
+  transition: font-size 0.5s ease;
 }
 
 .hero-content.top-hero-content h1 {
@@ -54,7 +55,7 @@ section {
 }
 
 .hero-content.top-hero-content p {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .hero-section a{
@@ -87,10 +88,6 @@ section {
   user-select: none;
 }
 
-.background-marquee.top-marquee {
-  top: 20%;
-}
-
 @keyframes scroll {
   0% {
       transform: translateX(0%);
@@ -120,8 +117,16 @@ section {
   color:rgb(122, 122, 122);
   transform: translateY(-5px);
 }
-.socials.hidden{
-  display: none;
+#things, .socials {
+  transition: height 0.5s ease, opacity 0.5s ease, margin 0.5s ease;
+  overflow: hidden;
+}
+
+#things.hidden, .socials.hidden {
+  height: 0;
+  opacity: 0;
+  margin-top: 0;
+  pointer-events: none;
 }
 
 .hero-button{
