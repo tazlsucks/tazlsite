@@ -9,33 +9,6 @@ function init() {
 document.addEventListener('DOMContentLoaded', init);
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Check if the page loaded with a hash and display the appropriate section
-    toggleSectionBasedOnHash();
-    window.onhashchange = toggleSectionBasedOnHash; // Handle hash change when the user navigates
-});
-
-function toggleSectionBasedOnHash() {
-    const hash = window.location.hash;
-    const page1 = document.querySelector('.page1');
-    const about = document.querySelector('.about');
-    const works = document.querySelector('.works');
-
-    // Hide all sections initially
-    about.style.display = 'none';
-    works.style.display = 'none';
-    page1.style.display = 'none';
-
-    // Show the section based on the hash
-    if (hash === '#about') {
-        about.style.display = 'block';
-    } else if (hash === '#works') {
-        works.style.display = 'block';
-    } else {
-        page1.style.display = 'block'; // Show the main page by default
-    }
-}
-
 function toggleAbout() {
     window.location.hash = 'about';
 }

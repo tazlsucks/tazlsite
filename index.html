@@ -31,7 +31,7 @@
     </div>
     <div class="hero-content">
         <h1><a href="#">tazldied</a></h1>
-        <p>i do things sometimes</p>
+        <p id="things">i do things sometimes</p>
         <div class="socials">
         <a class="social" href="https://www.instagram.com/tazl.died/" target="_blank"><i class="fab fa-instagram" alt="Instagram"></i></a>
         <a class="social" href="https://github.com/tazlsucks" target="_blank"><i class="fab fa-github" alt="GitHub"></i></a>
@@ -42,30 +42,69 @@
         <a class="hero-button" href="#works">my works</a>
     </div>
     </section>
+    <section class="section-content" id="about-section">
+        <h2>About Me</h2>
+        <p>Here's some information about me...</p>
+      </section>
+    
+      <!-- Works Section -->
+      <section class="section-content" id="works-section">
+        <h2>My Works</h2>
+        <p>Here are my projects...</p>
+      </section>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            function updateMarqueeText() {
-                const fragment = window.location.hash;
-                let text = "TAZLDIED";
-        
-                if (fragment === "#works") {
-                    text = "WORKS";
-                } else if (fragment === "#about") {
-                    text = "ABOUT ME";
-                }
-                const marqueeSpans = document.querySelectorAll('.background-marquee span');
-                marqueeSpans.forEach(span => {
-                    span.innerText = text + " " + text + " " + text + " " + text + " " + text;
-                });
-            }
-        
-            // Call function on page load
-            updateMarqueeText();
-        
-            // Optional: Update text dynamically when the hash changes
-            window.addEventListener("hashchange", updateMarqueeText);
-        });
-    </script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero-section");
+  const heroContent = document.querySelector(".hero-content");
+  const socials = document.querySelector(".socials");
+  const aboutSection = document.getElementById("about-section");
+  const worksSection = document.getElementById("works-section");
+  const things = document.getElementById("things");
+  const marquee = document.querySelector(".background-marquee");
+
+  function updatePageState() {
+    const fragment = window.location.hash;
+    let text = "TAZLDIED";
+    
+    if (fragment === "#works") {
+      text = "WORKS";
+      hero.classList.add("top-hero");
+      heroContent.classList.add("top-hero-content");
+      worksSection.style.display = "block";
+      aboutSection.style.display = "none";
+      things.style.display = "none";
+      socials.classList.add("hidden");
+      marquee.classList.add("top-marquee");
+    } else if (fragment === "#about") {
+      text = "ABOUT ME";
+      hero.classList.add("top-hero");
+      heroContent.classList.add("top-hero-content");
+      aboutSection.style.display = "block";
+      worksSection.style.display = "none";
+      things.style.display = "none";
+      socials.classList.add("hidden");
+      marquee.classList.add("top-marquee");
+    } else {
+      hero.classList.remove("top-hero");
+      heroContent.classList.remove("top-hero-content");
+      aboutSection.style.display = "none";
+      worksSection.style.display = "none";
+      things.style.display = "block";
+      socials.classList.remove("hidden");
+      marquee.classList.remove("top-marquee"); 
+    }
+
+    const marqueeSpans = document.querySelectorAll(".background-marquee span");
+    marqueeSpans.forEach((span) => {
+      span.innerText = text + " " + text + " " + text + " " + text + " " + text;
+    });
+  }
+
+  updatePageState();
+  window.addEventListener("hashchange", updatePageState);
+});
+
+      </script>
         
 </body>
 </html>

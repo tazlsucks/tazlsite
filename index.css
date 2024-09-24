@@ -26,17 +26,37 @@ section {
   padding: 20px;
   position: relative;
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
 }
 .hero-content {
   padding: 20px;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 10;
 }
-.hero-section h1{
+.hero-section.top-hero {
+  height: 35vh;
+}
+.hero-content.top-hero-content {
+  font-size: 0.8em;
+}
+
+.hero-content h1 {
   font-size: 70px;
 }
-.hero-section p{
-  font-size: 45px; 
+
+.hero-content.top-hero-content h1 {
+  font-size: 40px;
 }
+
+.hero-content p {
+  font-size: 45px;
+}
+
+.hero-content.top-hero-content p {
+  font-size: 30px;
+}
+
 .hero-section a{
   text-decoration: none;
   color: white;
@@ -60,11 +80,15 @@ section {
   opacity: 0.10;
   text-transform: uppercase;
   color: #fff;
-  letter-spacing: 20px;
+  letter-spacing: 10px;
   animation: scroll 20s linear infinite;
   padding-right: 50px;
   pointer-events: none;
   user-select: none;
+}
+
+.background-marquee.top-marquee {
+  top: 20%;
 }
 
 @keyframes scroll {
@@ -96,6 +120,9 @@ section {
   color:rgb(122, 122, 122);
   transform: translateY(-5px);
 }
+.socials.hidden{
+  display: none;
+}
 
 .hero-button{
   text-decoration: none;
@@ -110,4 +137,22 @@ section {
 .hero-button:hover{
   background-color: #fff;
   color:#050505;
+}
+
+.section-content {
+  display: none;
+  margin: 0 auto;
+  padding: 60px 20px;
+  max-width: 800px;
+  text-align: center;
+}
+
+.section-content h2 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.section-content p {
+  font-size: 20px;
+  line-height: 1.6;
 }
