@@ -176,3 +176,33 @@ section {
   font-size: 20px;
   line-height: 1.6;
 }
+
+footer{
+  position: absolute;
+  text-align: left;
+  padding: 5px;
+}
+
+.button{
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 5px rgba(153, 153, 153, 0.993);
+  cursor: pointer;
+  background-color: #050505;
+}
+
+.button:hover{
+  background-color: #fff;
+  color:#050505;
+}
+.button:disabled{
+  background-color: #050505;
+  color: rgba(128, 128, 128, 0.781);
+  cursor: not-allowed;
+  box-shadow: 0 0 0;
+}

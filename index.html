@@ -45,12 +45,23 @@
     </section>
     <section class="section-content" id="about-section">
         <h2>about me</h2>
+        <h2>17 year old video game player</h2>
+        <p>
+            i really like computers and software! i've been programming off and on<br>for a couple years now.
+            <br>
+        </p>
+        <div id="turnstile-container" class="cf-turnstile" data-callback="onTurnstileSuccess" role="presentation"></div>
+        <div id="contact-info"><button class="button" id="turn" >email me</button></div>
       </section>
     
       <section class="section-content" id="works-section">
         <h2>works</h2>
         <p>everything ive ever made/worked on!</p>
       </section>
+
+      <footer id="Footer">
+        <iframe src="https://status.tazl.cc/badge?theme=dark" width="400" height="30" frameborder="0" scrolling="no"></iframe>
+      </footer>
     <script>
   document.addEventListener("DOMContentLoaded", function () {
   const hero = document.querySelector(".hero-section");
@@ -60,6 +71,7 @@
   const aboutSection = document.getElementById("about-section");
   const worksSection = document.getElementById("works-section");
   const marquee = document.querySelector(".background-marquee");
+  const footer = document.getElementById("Footer")
 
   function collapseElement(element) {
     const sectionHeight = element.scrollHeight;
@@ -92,6 +104,7 @@
       heroContent.classList.add("top-hero-content");
       worksSection.style.display = "block";
       aboutSection.style.display = "none";
+      footer.style.display = "none";
       collapseElement(things);
       collapseElement(socials);
       marquee.classList.add("top-marquee");
@@ -101,6 +114,7 @@
       heroContent.classList.add("top-hero-content");
       aboutSection.style.display = "block";
       worksSection.style.display = "none";
+      footer.style.display = "none";
       collapseElement(things); 
       collapseElement(socials);
       marquee.classList.add("top-marquee");
@@ -111,7 +125,8 @@
       worksSection.style.display = "none";
       expandElement(things); 
       expandElement(socials); 
-      marquee.classList.remove("top-marquee"); 
+      marquee.classList.remove("top-marquee");
+      setTimeout(() => {footer.style.display = "block";},350)
     }
 
     const marqueeSpans = document.querySelectorAll(".background-marquee span");
