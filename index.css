@@ -17,7 +17,7 @@ section {
 }
 
 .hero-section{
-  height: 70vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,10 +76,32 @@ section {
   }
 }
 
+.socials{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.social{
+  padding: 12px;
+  font-size: 35px;
+  border-radius:50%;
+  transition:0.4s ease-in-out;
+}
+.social:hover { 
+  cursor: pointer;
+  color:rgb(122, 122, 122);
+  transform: translateY(-5px);
+}
+
 .hero-button{
   text-decoration: none;
   color: white;
   display: inline-block;
+  font-size: 25px;
   padding: 12px 24px;
   border-radius: 5px;
   transition: 0.3s ease;
