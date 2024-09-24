@@ -23,9 +23,40 @@
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
-    <div class="hero-container">
+    <section class="hero-section" id="hero">
+    <div class="background-marquee">
+         <span>TAZLDIED TAZLDIED TAZLDIED TAZLDIED TAZLDIED TAZLDIED</span>
+         <span>TAZLDIED TAZLDIED TAZLDIED TAZLDIED TAZLDIED TAZLDIED</span>
+    </div>
+    <div class="hero-content">
         <h1>tazldied</h1>
         <p>i do things sometimes.</p>
     </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function updateMarqueeText() {
+                const fragment = window.location.hash;
+                let text = "TAZLDIED";
+        
+                if (fragment === "#works") {
+                    text = "WORKS";
+                } else if (fragment === "#about") {
+                    text = "ABOUT ME";
+                }
+                const marqueeSpans = document.querySelectorAll('.background-marquee span');
+                marqueeSpans.forEach(span => {
+                    span.innerText = text + " " + text + " " + text + " " + text + " " + text;
+                });
+            }
+        
+            // Call function on page load
+            updateMarqueeText();
+        
+            // Optional: Update text dynamically when the hash changes
+            window.addEventListener("hashchange", updateMarqueeText);
+        });
+    </script>
+        
 </body>
 </html>
