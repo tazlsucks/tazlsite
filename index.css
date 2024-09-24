@@ -32,10 +32,14 @@ section {
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 .hero-section h1{
-  font-size: 50px;
+  font-size: 70px;
 }
 .hero-section p{
-  font-size: 25px;
+  font-size: 45px; 
+}
+.hero-section a{
+  text-decoration: none;
+  color: white;
 }
 
 .background-marquee {
@@ -70,4 +74,18 @@ section {
   100% {
       transform: translateX(-50%);
   }
+}
+
+.hero-button{
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.hero-button:hover{
+  background-color: #fff;
+  color:#050505;
 }
