@@ -37,22 +37,22 @@
         <a class="social" href="https://github.com/tazlsucks" target="_blank"><i class="fab fa-github" alt="GitHub"></i></a>
         <a class="social" href="https://youtube.com/@tazldied" target="_blank"><i class="fab fa-youtube" alt="YouTube"></i></a>
     </div>
+    <div class="button-container">
         <a class="hero-button" href="#about">about me</a>
-        <a>|</a>
         <a class="hero-button" href="#works">my works</a>
+      </div>
     </div>
     </section>
     <section class="section-content" id="about-section">
-        <h2>About Me</h2>
-        <p>Here's some information about me...</p>
+        <h2>about me</h2>
       </section>
     
       <section class="section-content" id="works-section">
-        <h2>My Works</h2>
-        <p>Here are my projects...</p>
+        <h2>works</h2>
+        <p>everything ive ever made/worked on!</p>
       </section>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
   const hero = document.querySelector(".hero-section");
   const heroContent = document.querySelector(".hero-content");
   const socials = document.querySelector(".socials");
@@ -62,23 +62,22 @@
   const marquee = document.querySelector(".background-marquee");
 
   function collapseElement(element) {
-    const sectionHeight = element.scrollHeight; // Get the full height of the element
-    element.style.height = sectionHeight + 'px'; // Set the element's height explicitly
+    const sectionHeight = element.scrollHeight;
+    element.style.height = sectionHeight + 'px';
     requestAnimationFrame(() => {
-      element.style.height = '0px'; // Start the collapse animation
+      element.style.height = '0px';
       element.style.opacity = '0';
       element.style.marginTop = '0';
     });
   }
 
   function expandElement(element) {
-    const sectionHeight = element.scrollHeight; // Get the full height of the element
-    element.style.height = sectionHeight + 'px'; // Set the element's height to expand
+    const sectionHeight = element.scrollHeight;
+    element.style.height = sectionHeight + 'px';
     element.style.opacity = '1';
     element.style.marginTop = '20px';
 
     element.addEventListener('transitionend', function () {
-      // After the animation ends, reset the height to auto
       element.style.height = 'auto';
     }, { once: true });
   }
@@ -88,31 +87,31 @@
     let text = "TAZLDIED";
 
     if (fragment === "#works") {
-      text = "WORKS";
+      text = "CREATIONS";
       hero.classList.add("top-hero");
       heroContent.classList.add("top-hero-content");
       worksSection.style.display = "block";
       aboutSection.style.display = "none";
-      collapseElement(things); // Collapse "things"
-      collapseElement(socials); // Collapse "socials"
-      marquee.classList.add("top-marquee"); // Move marquee down
+      collapseElement(things);
+      collapseElement(socials);
+      marquee.classList.add("top-marquee");
     } else if (fragment === "#about") {
       text = "ABOUT ME";
       hero.classList.add("top-hero");
       heroContent.classList.add("top-hero-content");
       aboutSection.style.display = "block";
       worksSection.style.display = "none";
-      collapseElement(things); // Collapse "things"
-      collapseElement(socials); // Collapse "socials"
-      marquee.classList.add("top-marquee"); // Move marquee down
+      collapseElement(things); 
+      collapseElement(socials);
+      marquee.classList.add("top-marquee");
     } else {
       hero.classList.remove("top-hero");
       heroContent.classList.remove("top-hero-content");
       aboutSection.style.display = "none";
       worksSection.style.display = "none";
-      expandElement(things); // Expand "things"
-      expandElement(socials); // Expand "socials"
-      marquee.classList.remove("top-marquee"); // Reset marquee position
+      expandElement(things); 
+      expandElement(socials); 
+      marquee.classList.remove("top-marquee"); 
     }
 
     const marqueeSpans = document.querySelectorAll(".background-marquee span");
