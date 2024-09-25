@@ -10,6 +10,10 @@ body, html{
     scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar{
+  width: 0;
+}
+
 section {
   padding: 60px 20px;
   margin: 0 auto;
@@ -180,7 +184,7 @@ section {
 footer{
   position: absolute;
   text-align: left;
-  padding: 5px;
+  padding-left: 5px;
 }
 
 .button{
@@ -205,4 +209,38 @@ footer{
   color: rgba(128, 128, 128, 0.781);
   cursor: not-allowed;
   box-shadow: 0 0 0;
+}
+
+.works-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.work-card {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  box-shadow: 0 0 8px rgba(75, 75, 75, 0.836);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'DM Sans', monospace, sans-serif;
+  transition: 0.2s;
+  width: 80%;
+  max-width: 200px;
+  min-height: 400px;
+}
+.work-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 32px rgba(255, 255, 255, 0.836);
+}
+.work-card img{
+  max-width: 70%;
+  max-height: 70%;
+}
+
+.works-grid a{
+  text-decoration: none;
 }
