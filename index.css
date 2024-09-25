@@ -54,6 +54,21 @@ section {
 
 .hero-content.top-hero-content h1 {
   font-size: 40px;
+  position: relative;
+}
+
+.hero-content.top-hero-content h1:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(247, 247, 247);
+  transition: width 0.3s ease;
+}
+.hero-content.top-hero-content h1:hover::after {
+  width: 100%;
 }
 
 .hero-content p {
