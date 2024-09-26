@@ -65,7 +65,7 @@ section {
   width: 0;
   height: 2px;
   background-color: rgb(247, 247, 247);
-  transition: width 0.3s ease;
+  transition: width 0.5s ease;
 }
 .hero-content.top-hero-content h1:hover::after {
   width: 100%;
@@ -269,24 +269,6 @@ footer{
   max-height: 70%;
   align-self: center;
   border-radius: 5px;
-}
-
-.work-footer {
-  margin-top: auto;
-  text-align: center;
-}
-
-.active {
-  color: #214d21;
-}
-.active:hover{
-  color: #2e7a2e;
-}
-.created {
-  color: #1d1d1d;
-}
-.created:hover {
-  color: #555555;
 }
 
 .works-grid a{
