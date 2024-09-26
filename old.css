@@ -45,6 +45,11 @@ footer {
     text-align:center;
   }
 
+  .animate__animated.animate__slideInDown {
+    --animate-duration: 0.58s;
+  }
+
+
   a{
     text-decoration: none;
   }
@@ -99,4 +104,21 @@ footer {
 }
 .button:disabled:hover {
     background-color: rgb(30, 30, 30);
+}
+  
+input {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.user-info {
+  display: none;
+  margin-top: 20px;
+}
+.user-info img {
+  border-radius: 50%;
+}
+.error {
+  color: red;
+  margin-top: 20px;
+  font-family: "DM Sans", monospace, sans-serif;
 }

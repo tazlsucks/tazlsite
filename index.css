@@ -171,6 +171,7 @@ section {
   border-radius: 5px;
   transition: 0.3s ease;
   box-shadow: 0 0 5px rgba(153, 153, 153, 0.993);
+  user-select: none;
 }
 
 .hero-button:hover{
@@ -184,6 +185,7 @@ section {
   padding: 60px 20px;
   max-width: 800px;
   text-align: center;
+  transition: 0.3s ease;
 }
 
 .section-content h2 {
@@ -203,24 +205,30 @@ footer{
 }
 
 .button{
-  text-decoration: none;
-  color: white;
-  display: inline-block;
-  font-size: 15px;
-  padding: 12px 24px;
-  border-radius: 5px;
-  transition: 0.3s ease;
-  box-shadow: 0 0 5px rgba(153, 153, 153, 0.993);
-  cursor: pointer;
   background-color: #050505;
+  color: #fff;
+  border: 1px solid rgba(44,44,44,255);
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(219, 219, 219, 0.1);
+  transition: 0.2s;
+  font-size: 18px;
+  text-align: center;
+  overflow: hidden;
+  z-index: 10;
+  transition: 0.3s ease;
 }
 
 .button:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(209, 209, 209, 0.1);
   background-color: #fff;
-  color:#050505;
+  color: #050505;
 }
 .button:disabled{
-  background-color: #050505;
+  background-color: #1d1d1d;
   color: rgba(128, 128, 128, 0.781);
   cursor: not-allowed;
   box-shadow: 0 0 0;
