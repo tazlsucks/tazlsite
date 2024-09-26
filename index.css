@@ -65,7 +65,7 @@ section {
   width: 0;
   height: 2px;
   background-color: rgb(247, 247, 247);
-  transition: width 0.5s ease;
+  transition: width 0.3s ease;
 }
 .hero-content.top-hero-content h1:hover::after {
   width: 100%;
