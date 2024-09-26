@@ -233,6 +233,8 @@ footer{
 }
 
 .work-card {
+  display: flex;
+  flex-direction: column;
   padding: 10px 20px;
   margin: 5px;
   font-size: 16px;
@@ -247,13 +249,27 @@ footer{
   max-width: 200px;
   min-height: 400px;
 }
+
 .work-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 0 32px rgba(255, 255, 255, 0.836);
 }
-.work-card img{
+
+
+.work-card img {
   max-width: 70%;
   max-height: 70%;
+  align-self: center;
+  border-radius: 5px;
+}
+
+.active {
+  margin-top: auto;
+  text-align: center;
+  color: #102b10;
+}
+.active:hover{
+  color: #2e7a2e;
 }
 
 .works-grid a{
