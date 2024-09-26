@@ -271,13 +271,22 @@ footer{
   border-radius: 5px;
 }
 
-.active {
+.work-footer {
   margin-top: auto;
   text-align: center;
-  color: #102b10;
+}
+
+.active {
+  color: #214d21;
 }
 .active:hover{
   color: #2e7a2e;
+}
+.created {
+  color: #1d1d1d;
+}
+.created:hover {
+  color: #555555;
 }
 
 .works-grid a{
