@@ -1,67 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="title" content="tazldied" />
-    <meta name="description" content=":3" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tazldied.cc" />
-    <meta property="og:title" content="tazldied" />
-    <meta property="og:description" content=":3" />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://tazldied.cc" />
-    <meta property="twitter:title" content="tazldied" />
-    <meta property="twitter:description" content=":3" />
+    <meta name="title" content="tazldied"/>
+    <meta name="description" content=":3"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://tazl.cc"/>
+    <meta property="og:title" content="tazldied"/>
+    <meta property="og:description" content="i do things sometimes"/>
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:url" content="https://tazl.cc"/>
+    <meta property="twitter:title" content="tazldied"/>
+    <meta property="twitter:description" content="i do things sometimes"/>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>tazl</title>
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="https://cdn.tazl.cc/images/tzldog.ico"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="main.js"></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
-    <div class="animate__animated animate__slideInDown container page1">
-        <h1>tazldied</h1>
-        <h2>i do things sometimes</h2>
-        <div class="button-container">
-            <a class="social" href="https://www.instagram.com/tazl.died/"><i class="fab fa-instagram" alt="Instagram"></i></a>
-            <a class="social" href="https://github.com/tazlsucks"><i class="fab fa-github" alt="GitHub"></i></a>
-            <a class="social" href="https://youtube.com/@tazldied"><i class="fab fa-youtube" alt="YouTube"></i></a>
-        </div>
-        <h1></h1>
-        <div class="button-container">
-            <button class="button"onclick="toggleAbout()">about me</button>
-            <button class="button"onclick="toggleWork()">my works</button>
-          </div>
-          
+    <section class="hero-section" id="hero">
+    <div class="background-marquee">
+         <span></span>
+         <span></span>
     </div>
-    <div class="container works" id="works">
-        <h1>works</h1>
-        <iframe frameborder="0" src="https://itch.io/embed/1193615?dark=true" width="208" height="167"><a href="https://tazl.itch.io/cubix">Cubix by tazl</a></iframe>
-        <h2><a class="button" target="_blank" href="https://account.tazl.cc">TAS</a></h2>
-        <h2><a class="button" target="_blank" href="https://nocom.cc">NOCOM</a></h2>
-        <h2><a class="button" href="removebp/index.html">RemoveBP</a></h2>
-        <h1></h1>
-        <h2>more coming soon (maybe)</h2>
-        <button class="button"onclick="toggleBack()">back</button>
-        <br>
+    <div class="hero-content">
+        <h1><a href="#">tazldied</a></h1>
+        <p id="things">i do things sometimes</p>
+        <div class="socials">
+        <a class="social" href="https://www.instagram.com/tazl.died/" target="_blank"><i class="fab fa-instagram" alt="Instagram"></i></a>
+        <a class="social" href="https://github.com/tazlsucks" target="_blank"><i class="fab fa-github" alt="GitHub"></i></a>
+        <a class="social" href="https://youtube.com/@tazldied" target="_blank"><i class="fab fa-youtube" alt="YouTube"></i></a>
     </div>
-    <div class="container about" id="about">
-        <h1>about me</h1>
+    <div class="button-container">
+        <a class="hero-button" href="#about">about me</a>
+        <a class="hero-button" href="#works">my works</a>
+      </div>
+    </div>
+    </section>
+    <section class="section-content" id="about-section">
+        <h2>about me</h2>
         <h2>17 year old video game player</h2>
         <p>
-            i really like computers and software! i've been programming off and on<br>for a couple years now.
+            i really like computers and software! i've been programming off and on for a couple years now.
             <br>
+            i'm most experienced in JS, HTML, and CSS. with some experience in Lua, C#, C++, and Java.
         </p>
-        <h2><iframe src="https://status.tazl.cc/badge?theme=dark" width="200" height="35" frameborder="0" scrolling="no"></iframe></h2>
         <div id="turnstile-container" class="cf-turnstile" data-callback="onTurnstileSuccess" role="presentation"></div>
-        <div id="contact-info"><button class="button" id="turn" disabled>email me</button></div>
-        <h2></h2>
-        <button class="button"onclick="toggleBack()">back</button>
         <br>
-    </div>
+        <div id="contact-info"><button class="button" id="turn" disabled>email me</button></div>
+      </section>
+    
+      <section class="section-content" id="works-section">
+        <h2>works</h2>
+        <p>everything ive ever made/worked on!</p>
+        <div class="works-grid">
+          <!-- <a class="work-card">
+            <h1>a.v.g project</h1>
+            <p>???</p>
+            <img src="https://cdn.tazl.cc/images/error.ico">
+          </a> -->
+        <a class="work-card" href="https://account.tazl.cc">
+            <div class="content">
+            <h1>TAS</h1>
+            <p>my account system linked to most of my products and services</p>
+            <img src="https://cdn.tazl.cc/images/tzldog.png">
+          </div>
+          </a>
+        <a class="work-card" href="https://nocom.cc">
+            <div class="content">
+            <h1>NOCOM</h1>
+            <p>homemade streaming service to watch movies and tv shows</p>
+            <img src="https://cdn.tazl.cc/images/nocom.png">
+          </div>
+          </a>
+        <a class="work-card" href="swearjar.html">
+            <div class="content">
+            <h1>swear jar</h1>
+            <p>a discord bot that tracks the swears you and your friends have said. <br>He Watches.</p>
+            <img src="https://cdn.discordapp.com/avatars/1263308860429701205/864881a487977946d9c076380106740e.png">
+          </div>
+          </a>
+          <!-- <a class="work-card">
+            <h1>tazl's obby</h1>
+            <p>road blocks obby game</p>
+            <img src="https://tr.rbxcdn.com/5e24113672efd5ee96d9e97bd98ec416/150/150/Image/Png">
+          </a> -->
+        <a class="work-card" href="https://github.com/tazlsucks/roblox-update-tracker">
+            <div class="content">
+            <h1>roblox update tracker</h1>
+            <p>open source discord bot that tracks all roblox updates.</p>
+            </div>
+          </a>
+        <a class="work-card" href="https://chromewebstore.google.com/detail/removebp/eibajjcjoiemnilanpkdcnlceklemndg">
+            <div class="content">
+            <h1>RemoveBP</h1>
+            <p>revolutionary extension that removes the banner that shows up on the Youtube homepage.</p>
+            <img src="https://cdn.tazl.cc/images/removebp.png">
+          </div>
+          </a>
+        <a class="work-card" href="https://tazl.itch.io/cubix">
+            <div class="content">
+            <h1>Cubix</h1>
+            <p>a short and simple yet difficult rage game</p>
+            <img src="https://cdn.tazl.cc/images/cubix.gif">
+          </div>
+          </a>
+          <!-- <a class="work-card">
+            <div class="content">
+            <h1>test</h1>
+            <img src="https://cdn.tazl.cc/images/tzldog.ico">
+            </div>
+            <div class="work-footer">
+
+            </div>
+          </a> -->
+        </div>
+      </section>
+
+      <footer id="Footer">
+        <iframe src="https://status.tazl.cc/badge?theme=dark" width="100%" height="30" frameborder="0" scrolling="no"></iframe>
+      </footer>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero-section");
+  const heroContent = document.querySelector(".hero-content");
+  const socials = document.querySelector(".socials");
+  const things = document.getElementById("things");
+  const aboutSection = document.getElementById("about-section");
+  const worksSection = document.getElementById("works-section");
+  const marquee = document.querySelector(".background-marquee");
+  const footer = document.getElementById("Footer")
+
+  function collapseElement(element) {
+    const sectionHeight = element.scrollHeight;
+    element.style.height = sectionHeight + 'px';
+    requestAnimationFrame(() => {
+      element.style.height = '0px';
+      element.style.opacity = '0';
+      element.style.marginTop = '0';
+    });
+  }
+
+  function expandElement(element) {
+    const sectionHeight = element.scrollHeight;
+    element.style.height = sectionHeight + 'px';
+    element.style.opacity = '1';
+    element.style.marginTop = '20px';
+
+    element.addEventListener('transitionend', function () {
+      element.style.height = 'auto';
+    }, { once: true });
+  }
+
+  function updatePageState() {
+    const fragment = window.location.hash;
+    let text = "TAZLDIED";
+
+    if (fragment === "#works") {
+      text = "CREATIONS";
+      hero.classList.add("top-hero");
+      heroContent.classList.add("top-hero-content");
+      worksSection.style.display = "block";
+      aboutSection.style.display = "none";
+      footer.style.display = "none";
+      collapseElement(things);
+      collapseElement(socials);
+      marquee.classList.add("top-marquee");
+    } else if (fragment === "#about") {
+      text = "ABOUT ME";
+      hero.classList.add("top-hero");
+      heroContent.classList.add("top-hero-content");
+      aboutSection.style.display = "block";
+      worksSection.style.display = "none";
+      footer.style.display = "none";
+      collapseElement(things); 
+      collapseElement(socials);
+      marquee.classList.add("top-marquee");
+    } else {
+      hero.classList.remove("top-hero");
+      heroContent.classList.remove("top-hero-content");
+      aboutSection.style.display = "none";
+      worksSection.style.display = "none";
+      expandElement(things); 
+      expandElement(socials); 
+      marquee.classList.remove("top-marquee");
+      setTimeout(() => {footer.style.display = "block";},350)
+    }
+
+    const marqueeSpans = document.querySelectorAll(".background-marquee span");
+    marqueeSpans.forEach((span) => {
+      span.innerText = text + " " + text + " " + text + " " + text + " " + text;
+    });
+  }
+
+  updatePageState();
+  window.addEventListener("hashchange", updatePageState);
+});
+    </script>
+        
 </body>
 </html>
