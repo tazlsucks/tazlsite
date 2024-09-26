@@ -283,3 +283,58 @@ footer{
 .works-grid a{
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+
+  .hero-content h1 {
+      font-size: 40px;
+  }
+
+  .hero-content p {
+      font-size: 25px;
+  }
+
+  .background-marquee span {
+      font-size: 80px;
+  }
+
+
+  .hero-button {
+      font-size: 18px;
+      padding: 10px 20px;
+  }
+
+  .works-grid {
+      gap: 15px;
+  }
+
+  .work-card {
+      max-width: none;
+      min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+
+
+
+  .socials {
+      gap: 5px;
+  }
+
+  .work-card {
+      font-size: 14px;
+      min-height: 250px;
+  }
+
+  .hero-button {
+      font-size: 16px;
+      padding: 8px 16px;
+  }
+
+  .button {
+      width: 150px;
+      font-size: 16px;
+      padding: 8px;
+  }
+}
